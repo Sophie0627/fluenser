@@ -14,10 +14,13 @@ class CreateInboxUserTable extends Migration
     public function up()
     {
         Schema::create('inbox_user', function (Blueprint $table) {
-            $table->integer('inbox_id');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('inbox_id');
+            $table->unsignedBigInteger('user_id');
             $table->integer('isRead');
             $table->timestamps();
+
+            $table->foreign('inbox_id')->references('id')->on('inboxes')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

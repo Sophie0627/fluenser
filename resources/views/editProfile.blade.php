@@ -21,13 +21,13 @@
                 <i class="fas fa-pencil-alt"></i>
               </p>
             </a>
-            <img src={{ url('/') . '/storage/profile-image/'.$profile->top_img.'.jpg'}} alt={{ $profile->top_img }} class="w-full" id="top-image">
+            <img src="{{ url('/') . '/storage/profile-image/'.$profile->top_img.'.jpg'}}" alt="{{ $profile->top_img }}" class="w-full" id="top-image">
           </div>
         </div>
         <div class="w-11/12 mx-auto relative -top-32 bg-white rounded-lg pb-3 pt-1" style="box-shadow: 0 0 10px 0 #999">
           <div class="w-1/3 absolute py-1 px-1 bg-white rounded-full" style="top:0; left:50%; transform: translate(-50%, -60%);box-shadow:0 0 8px #333">
-            <textarea name="round_img" id="round_img" hidden></textarea>
-            <img class="rounded-full w-full" id="round-image" src={{ url('/') . '/storage/profile-image/'.$profile->round_img.'.jpg'}} alt={{$profile->round_img}}>
+            <label for="round_img"></label><textarea name="round_img" id="round_img" hidden></textarea>
+            <img class="rounded-full w-full" id="round-image" src="{{ url('/') . '/storage/profile-image/'.$profile->round_img.'.jpg'}}" alt="{{$profile->round_img}}">
             <a class="absolute block w-8 h-8 bg-white rounded-full text-center" style="right:5%; bottom:5%;box-shadow: 0 0 15px #999" onclick="editImg('round')">
               <p class="leading-8 text-lg" style="color: #4addc4">
                 <i class="fas fa-camera"></i>
@@ -157,8 +157,8 @@
               </button>
               <div class="w-11/12 mx-auto grid grid-cols-12 mb-3 hidden" id="instagram_block">
                 <div class="col-span-12 md:col-span-11">
-                  <input type="text" name="instagram-link" id="instagram-link" class="text-gray-700 rounded w-full my-2 border-none text-sm md:text-md py-1 px-2" style="box-shadow: 0 0 8px 0 #999" placeholder="Instagram.com/username" value="{{$profile->instagram}}">
-                  <select name="instagram-follow" id="instagram-follow" class="text-gray-700 rounded-full w-full my-2 border-none text-sm md:text-md py-1 px-2" style="box-shadow: 0 0 8px 0 #999">
+                  <label for="instagram-link"></label><input type="text" name="instagram-link" id="instagram-link" class="text-gray-700 rounded w-full my-2 border-none text-sm md:text-md py-1 px-2" style="box-shadow: 0 0 8px 0 #999" placeholder="Instagram.com/username" value="{{$profile->instagram}}">
+                  <label for="instagram-follow"></label><select name="instagram-follow" id="instagram-follow" class="text-gray-700 rounded-full w-full my-2 border-none text-sm md:text-md py-1 px-2" style="box-shadow: 0 0 8px 0 #999">
                     <option>How many followers?</option>
                     <option value="11" @if($profile->instagram_follows == 11) selected @endif>1k-10k</option>
                     <option value="60" @if($profile->instagram_follows == 60) selected @endif>10k-50k</option>
@@ -319,7 +319,7 @@
       case 'round':
         ratio = 1;
         width = 160;
-        height = 160
+        height = 160;
         break;
       case 'portfolio':
         ratio = 0.8;

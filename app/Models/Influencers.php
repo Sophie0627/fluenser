@@ -21,7 +21,7 @@ class Influencers extends Model
                 ->join('profile', 'profile.user_id', '=', 'users.id')
                 ->join('influencers', 'influencers.user_id', '=', 'profile.user_id')
                 ->join('influencers_info', 'influencers.id', '=', 'influencers_info.influencer_id');
-        
+
         if($name != '')
             $influencers = $influencers
                     ->where('users.name', 'LIKE', '%'.$name.'%')
@@ -30,7 +30,7 @@ class Influencers extends Model
         if($location != 'Any')
             $influencers = $influencers
                     ->where('influencers_info.country', '=', $location);
-        
+
         $influencers = $influencers->select([
             'users.id',
             'users.name',

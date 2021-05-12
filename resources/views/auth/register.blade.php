@@ -35,7 +35,7 @@
                       </span>
                     @enderror
                   </div>
-      
+
                   <label class="block mb-8">
                       <input id="full_name" type="text" class="h-10 form-input mt-2 block w-full @error('full_name') is-invalid @enderror" name="full_name" value="{{ old('full_name') }}" autocomplete="full_name" autofocus placeholder="Full name" style="border:1px solid #999; padding:25px 15px;">
                       @error('full_name')

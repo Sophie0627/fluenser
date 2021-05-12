@@ -15,9 +15,11 @@ class CreatePortfolioTable extends Migration
     {
         Schema::create('portfolio', function (Blueprint $table) {
             $table->id();
-            $table->integer('profile_id');
+            $table->unsignedBigInteger('profile_id');
             $table->string('slide_img')->default('default_slide');
             $table->timestamps();
+
+            $table->foreign('profile_id')->references('id')->on('profile')->onDelete('cascade');
         });
     }
 

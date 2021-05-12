@@ -15,9 +15,9 @@ class CreateWalletTable extends Migration
     {
         Schema::create('wallet', function (Blueprint $table) {
             $table->id();
-            $table->float('usd_balance');
-            $table->float('gbp_balance');
-            $table->float('eur_balance');
+            $table->float('usd_balance')->default(0.0);
+            $table->float('gbp_balance')->default(0.0);
+            $table->float('eur_balance')->default(0.0);
             $table->timestamps();
         });
     }

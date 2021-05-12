@@ -15,15 +15,17 @@ class CreateBrandInfoTabel extends Migration
     {
         Schema::create('brand_info', function (Blueprint $table) {
             $table->id();
-            $table->integer('brand_id');
+            $table->unsignedBigInteger('brand_id');
             $table->string('country')->default('unknown');
             $table->string('state')->default('unknown');
             $table->integer('posts')->default(0);
-            $table->string('avatar')->default('johndoeavatar');
-            $table->string('back_img')->default('johndoeback');
-            $table->integer('rating');
-            $table->integer('reviews');
+            $table->string('avatar')->default('default_round');
+            $table->string('back_img')->default('default_back');
+            $table->integer('rating')->default(0);
+            $table->integer('reviews')->default(0);
             $table->timestamps();
+
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 

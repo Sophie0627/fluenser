@@ -12,7 +12,7 @@
         <div class="bg-white w-11/12 mx-auto my-3 md:max-w-lg pb-20">
           <div class="w-3/5 mx-auto rounded-full" style="background: linear-gradient(to right, #06ebbe, #1277d3); padding:10px;">
             <div class="w-full rounded-full bg-white px-1 py-1">
-              <img src={{ url('/storage/profile-image/'.$influencerInfo->avatar.'.jpg') }} alt="$influencerInfo->avatar" class="w-full mx-auto rounded-full">              
+              <img src={{ url('/storage/profile-image/'.$influencerInfo->avatar.'.jpg') }} alt="$influencerInfo->avatar" class="w-full mx-auto rounded-full">
             </div>
           </div>
           <p class="text-center text-black text-lg md:text-xl font-bold">
@@ -113,6 +113,7 @@
                     <div class="absolute inset-y-0 right-0 flex items-center">
                       <label for="currency" class="sr-only">Currency</label>
                       <select id="currency" name="currency" class="h-full py-0 pl-2 pr-7 border-transparent text-black sm:text-sm rounded-r-md bg-gray-100" style="height: 34px; margin-right:2px;">
+                        <option value="gbp">GBP</option>
                         <option value="usd">USD</option>
                         <option value="aed">AED</option>
                         <option value="aud">AUD</option>
@@ -191,7 +192,7 @@
     var image = document.getElementById('image');
     var cropper;
     var filesValue;
-    
+
     function onClickCustom() {
         var value = $("select#price").val();
         if(value == 'custom') {

@@ -15,9 +15,11 @@ class CreateRequestImagesTable extends Migration
     {
         Schema::create('request_images', function (Blueprint $table) {
             $table->id();
-            $table->integer('request_id');
-            $table->string('image');
+            $table->unsignedBigInteger('request_id');
+            $table->string('image')->default('none');
             $table->timestamps();
+
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
         });
     }
 

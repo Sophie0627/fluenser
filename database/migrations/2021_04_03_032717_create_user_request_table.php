@@ -14,10 +14,13 @@ class CreateUserRequestTable extends Migration
     public function up()
     {
         Schema::create('user_request', function (Blueprint $table) {
-            $table->integer('request_id');
-            $table->integer('user_id');
-            $table->integer('isRead');
+            $table->unsignedBigInteger('request_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('isRead');
             $table->timestamps();
+
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

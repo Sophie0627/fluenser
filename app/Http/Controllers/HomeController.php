@@ -6,16 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Influencers;
-use App\Models\Brands;
 use App\Models\User;
-use App\Models\InfluencerInfo;
-use App\Models\BrandInfo;
 use App\Models\Profile;
-use App\Models\UserInbox;
-use App\Models\UserRequest;
-use App\Models\UserTask;
-use Stripe\Stripe;
 
 class HomeController extends Controller
 {
@@ -53,10 +45,10 @@ class HomeController extends Controller
             $account_info = $stripe->accounts->retrieve(
                 Auth::user()->stripe_id,
                 []
-            );            
+            );
             // echo $account_info;
         }
-        
+
         if(!isset($account_info->details_submitted) || !$account_info->details_submitted) {
             if($accountInfo[0]->accountType == 'brand')
                 $url = "https://connect.stripe.com/express/oauth/authorize?response_type=code&redirect_uri=https://www.fluee123.host/home&client_id=ca_IWOj0kHypzBkNXO3NO0BunufwTTZRVmb&stripe_user[business_type]=company&stripe_user[email]=".Auth::user()->email;
@@ -65,7 +57,7 @@ class HomeController extends Controller
         } else {
             $url = '';
         }
-        
+
         if(isset($_GET['code'])) {
             $authorization_code = $_GET['code'];
             $response = $stripe->oauth->token([
@@ -83,7 +75,7 @@ class HomeController extends Controller
                 $stripe_id,
                 []
                 );
-                
+
                 if(!isset($account_info->details_submitted) || !$account_info->details_submitted) {
                     if($accountInfo[0]->accountType == 'brand')
                         $url = "https://connect.stripe.com/express/oauth/authorize?response_type=code&redirect_uri=https://www.fluee123.host/home&client_id=ca_IWOj0kHypzBkNXO3NO0BunufwTTZRVmb&stripe_user[business_type]=company&stripe_user[email]=".Auth::user()->email;
@@ -92,7 +84,7 @@ class HomeController extends Controller
                 } else {
                     $url = '';
                 }
-            }                
+            }
         }
 
         $unread = $request->get('unread');

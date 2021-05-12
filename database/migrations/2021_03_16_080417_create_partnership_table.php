@@ -15,9 +15,11 @@ class CreatePartnershipTable extends Migration
     {
         Schema::create('partnership', function (Blueprint $table) {
             $table->id();
-            $table->integer('influencer_id');
-            $table->string('partnership_img');
+            $table->unsignedBigInteger('influencer_id');
+            $table->string('partnership_img')->default('none');
             $table->timestamps();
+
+            $table->foreign('influencer_id')->references('id')->on('influencers')->onDelete('cascade');
         });
     }
 

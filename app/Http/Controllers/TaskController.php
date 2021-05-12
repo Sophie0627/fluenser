@@ -72,7 +72,6 @@ class TaskController extends Controller
         ]);
     }
 
-
     public function taskDetailShow(Request $request, $request_id) {
         $requests = new Requests();
         $requestsInfo = $requests->getRequestInfoByID($request_id);
@@ -84,8 +83,8 @@ class TaskController extends Controller
                 ->where('user_id', '=', Auth::user()->id)
                 ->get();
         if(count($userTask) > 0) $userTask[0]->delete();
-        
-        $inbox = Inboxes::where('request_id', '=', $request_id)->first();
+
+        $inbox = Inboxes::where('request_Id', '=', $request_id)->first();
 
         return view('taskDetail', [
             'page' => 3,

@@ -15,9 +15,12 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->integer('send_id');
-            $table->integer('receive_id');
+            $table->unsignedBigInteger('send_id');
+            $table->unsignedBigInteger('receive_id');
             $table->timestamps();
+
+            $table->foreign('send_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('receive_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -94,7 +94,7 @@ class ProfileController extends Controller
             'saved' => $saved,
         ]);
     }
-    
+
     public function imageUpload(Request $request) {
         $input = $request->all();
         $base64_image = $input['top_img'];

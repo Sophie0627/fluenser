@@ -13,7 +13,7 @@ class Category extends Model
     protected $table = 'categories';
 
     protected $fillable = [
-        'name',
+        'category_name', 'text_color', 'back_color',
     ];
 
     public function getCategories($influencer_id) {

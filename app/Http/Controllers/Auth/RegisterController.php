@@ -10,8 +10,6 @@ use App\Models\InfluencerInfo;
 use App\Models\Brands;
 use App\Models\BrandInfo;
 use App\Models\Profile;
-use App\Models\Portfolio;
-use App\Models\Partnership;
 use App\Models\Wallet;
 use App\Models\WalletUser;
 use App\Models\Referral;

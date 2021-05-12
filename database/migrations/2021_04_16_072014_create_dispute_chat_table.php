@@ -15,13 +15,17 @@ class CreateDisputeChatTable extends Migration
     {
         Schema::create('dispute_chat', function (Blueprint $table) {
             $table->id();
-            $table->integer("request_id");
-            $table->integer("send_id");
-            $table->integer("receive_id");
-            $table->text("content");
-            $table->string("upload");
-            $table->integer('status');
+            $table->unsignedBigInteger("request_id");
+            $table->unsignedBigInteger("send_id");
+            $table->unsignedBigInteger("receive_id");
+            $table->text("content")->default('');
+            $table->string("upload")->default('none');
+            $table->integer('status')->default(0);
             $table->timestamps();
+
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
+          $table->foreign('send_id')->references('id')->on('users')->onDelete('cascade');
+          $table->foreign('receive_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

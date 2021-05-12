@@ -15,10 +15,12 @@ class CreateDepositsTable extends Migration
     {
         Schema::create('deposits', function (Blueprint $table) {
             $table->id();
-            $table->integer('request_id');
-            $table->string('client_secret');
-            $table->integer('statue');
+            $table->unsignedBigInteger('request_id');
+            $table->string('client_secret')->default('');
+            $table->integer('status')->default(0);
             $table->timestamps();
+
+            $table->foreign('request_id')->references('id')->on('requests')->onDelete('cascade');
         });
     }
 

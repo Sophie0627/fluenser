@@ -24,10 +24,11 @@ class CreateUsersTable extends Migration
                         ->unique()
                         ->nullable()
                         ->default(null);
-            $table->bool('loggedIn');
+            $table->tinyInteger('loggedIn');
             $table->string('stripe_id');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
     /**

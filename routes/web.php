@@ -45,8 +45,6 @@ Route::middleware(['auth', 'CheckUnread'])->group(function() {
 
     Route::get('/search',[App\Http\Controllers\TaskController::class, 'search'])->name('search');
 
-    Route::post('/imageUpload',[App\Http\Controllers\TaskController::class, 'search']);
-
     Route::get('/findInfluencers',[App\Http\Controllers\TaskController::class, 'findInfluencers']);
 
     Route::get('balance', [App\Http\Controllers\PaymentController::class, 'balance'])->name('balance');
@@ -81,3 +79,15 @@ Route::middleware(['CheckUnread'])->group(function() {
 });
 
 Route::get('referral/{ref_link}', [App\Http\Controllers\ReferralsController::class, 'newUser'])->name('newUser')->where('ref_link', '[a-z0-9]{128}+');
+
+Route::middleware(['auth', 'checkAdmin'])->group(function() {
+  Route::prefix('admin')->group(function() {
+    Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('adminDashboard');
+
+    Route::get('/news', [App\Http\Controllers\AdminController::class, 'news'])->name('news');
+
+    Route::get('/users', [App\Http\Controllers\AdminController::class, 'users'])->name('users');
+
+    Route::get('/projects', [App\Http\Controllers\AdminController::class, 'projects'])->name('projects');
+  });
+});

@@ -14,9 +14,12 @@ class CreateSavedTable extends Migration
     public function up()
     {
         Schema::create('saved', function (Blueprint $table) {
-            $table->integer('user1_id');
-            $table->integer('user2_id');
+            $table->unsignedBigInteger('user1_id');
+            $table->unsignedBigInteger('user2_id');
             $table->timestamps();
+
+            $table->foreign('user1_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user2_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

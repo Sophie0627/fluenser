@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\RequestInfo;
 use App\Models\Requests;
 use App\Models\User;
-use App\Models\Deposits;
 use App\Models\Inboxes;
 use App\Models\InboxInfo;
 use App\Models\WalletAction;
@@ -18,7 +17,6 @@ use App\Models\Referral;
 use App\Models\RequestChat;
 use Stripe\Stripe;
 use Pusher;
-use Session;
 
 class PaymentController extends Controller
 {
@@ -626,7 +624,6 @@ class PaymentController extends Controller
         $user = User::find($user_id);
         $walletUser = WalletUser::where('user_id', '=', $user->id)->get();
         $wallet_id = $walletUser[0]->wallet_id;
-        $wallet = Wallet::find($wallet_id);
         $price = $requestInfo->amount;
         $currency = $requestInfo->unit;
 
@@ -717,7 +714,6 @@ class PaymentController extends Controller
             $ref_user_id = $referral[0]->user_id;
             $walletUser = WalletUser::where('user_id', '=', $ref_user_id)->get();
             $wallet_id = $walletUser[0]->wallet_id;
-            $wallet = Wallet::find($wallet_id);
 
             $walletAction = new WalletAction;
             $walletAction->wallet_id = $wallet_id;

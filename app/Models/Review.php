@@ -27,7 +27,7 @@ class Review extends Model
                 ->where('reviews.user_id', '=', $user_id)
                 ->orderBy('reviews.created_at', 'asc')
                 ->get();
-        
+
         foreach ($reviews as $review) {
             $send_id = ($review->send_id == $user_id)?$review->receive_id : $review->send_id;
 
@@ -38,13 +38,13 @@ class Review extends Model
             $created = date_create($review->created_at);
             $now = date_create(date('Y-m-d h:i:sa'));
             $interval = date_diff($created, $now);
-            if($interval->format('%d') > 0) 
+            if($interval->format('%d') > 0)
                 $review->interval = $created->format('Y-m-d');
             if($interval->format('%d') == 0 && $interval->format('%h') > 0)
                 $review->interval = $interval->format("%h hour");
             if($interval->format('%h') == 0 && $interval->format('%d') == 0 && $interval->format('%i') > 0)
                 $review->interval = $interval->format('%i minutes');
-            if($interval->format('%h') == 0 && $interval->format('%d') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0) 
+            if($interval->format('%h') == 0 && $interval->format('%d') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0)
                 $review->interval = $interval->format('%sa seconds');
         }
 

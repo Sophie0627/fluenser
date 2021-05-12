@@ -109,4 +109,18 @@ class Requests extends Model
 
         return $request;
     }
+
+    public function getAllRequests($keyword) {
+      $requests = DB::table('requests')
+        ->join('request_info', 'requests.id', '=', 'request_info.request_id')
+        ->join('users as A', 'A.id', '=', 'requests.send_id')
+        ->join('users as B', 'B.id', '=', 'requests.receive_id')
+        ->select('requests.id', 'request_info.title', 'request_info.gift', 'request_info.status', 'A.name as brand_name', 'B.name as influencer_name', 'requests.created_at')
+        ->orderBy('requests.created_at', 'desc');
+      if($keyword == '') return $requests->paginate(10);
+      else return $requests->where('request_info.title', 'Like', '%'.$keyword.'%')
+            ->orWhere('A.name', 'Like', '%'.$keyword.'%')
+            ->orWhere('B.name', 'Like', '%'.$keyword.'%')
+            ->paginate(10);
+    }
 }

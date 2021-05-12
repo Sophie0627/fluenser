@@ -237,7 +237,7 @@
                     @if (count(explode('-', $review->interval)) > 0)
                     <p class="text-xs md:text-sm text-gray-500">by {{ $review->name }} - {{ $review->interval }}</p>
                     @else
-                    <p class="text-xs md:text-sm text-gray-500">by {{ $review->name }} - {{ $review->interval }} ago</p>                        
+                    <p class="text-xs md:text-sm text-gray-500">by {{ $review->name }} - {{ $review->interval }} ago</p>
                     @endif
                   </div>
                   <hr class="mt-3">

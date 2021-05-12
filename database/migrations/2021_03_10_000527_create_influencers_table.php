@@ -15,8 +15,10 @@ class CreateInfluencersTable extends Migration
     {
         Schema::create('influencers', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

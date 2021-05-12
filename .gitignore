@@ -3,3 +3,4 @@ storage/partnership-image
 storage/profile-image
 storage/task-image
 storage/upload-image
+.env
