@@ -184,8 +184,8 @@
           <tbody>
           @foreach($referrals as $referral)
           <tr class="py-2">
-            <td style="width: 25%" class="text-xs md:text-lg"><img src="{{ url('storage/profile-images/'.$referral->influencerInfo->avatar.'jpg') }}" alt="{{ $referral->influencerInfo->avatar }}">{{ $referral->influencerInfo->name }}</td>
-            <td style="width: 25%" class="text-xs md:text-lg"><img src="{{ url('storage/profile-images/'.$referral->referral_userInfo->avatar.'jpg') }}" alt="{{ $referral->referral_userInfo->avatar }}">{{ $referral->referral_userInfo->name }}</td>
+            <td style="width: 25%" class="text-xs md:text-lg"><img src="{{ url('storage/profile-images/'.$referral->influencerInfo->avatar.'.jpg') }}" alt="{{ $referral->influencerInfo->avatar }}">{{ $referral->influencerInfo->name }}</td>
+            <td style="width: 25%" class="text-xs md:text-lg"><img src="{{ url('storage/profile-images/'.$referral->referral_userInfo->avatar.'.jpg') }}" alt="{{ $referral->referral_userInfo->avatar }}">{{ $referral->referral_userInfo->name }}</td>
             <td style="width: 25%" class="text-xs md:text-lg">{{ $referral->influencerInfo->state.', '.$referral->influencerInfo->country }}</td>
             <td style="width: 25%" class="text-xs md:text-lg">
               <div class="w-full grid grid-cols-3 gap-x-2">
