@@ -5267,6 +5267,11 @@ var MessageComponent = function MessageComponent(props) {
     calculateTime();
   }, []);
 
+  var showImage = function showImage(src) {
+    $("div#imageModal img").attr("src", src);
+    $("div#imageModal").fadeIn(200);
+  };
+
   var calculateTime = function calculateTime() {
     var time;
 
@@ -5291,7 +5296,8 @@ var MessageComponent = function MessageComponent(props) {
   };
 
   var divStyle = {
-    "float": chat.send_id == userID ? 'right' : 'left'
+    "float": chat.send_id == userID ? 'right' : 'left',
+    background: chat.send_id == userID ? 'transparent' : 'white'
   };
   var userDatetimeStyle = {
     left: 0
@@ -5303,11 +5309,16 @@ var MessageComponent = function MessageComponent(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       style: divStyle,
       children: [chat.upload == 'none' ? null : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-          className: "rounded-xl w-1/2",
-          src: _const__WEBPACK_IMPORTED_MODULE_1__.default.baseURL + 'storage/upload-image/' + chat.upload + '.jpg',
-          alt: chat.upload,
-          style: divStyle
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          onClick: function onClick() {
+            showImage("".concat(_const__WEBPACK_IMPORTED_MODULE_1__.default.baseURL, "storage/upload-image/").concat(chat.upload, ".jpg"));
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            className: "rounded-xl w-1/2",
+            src: _const__WEBPACK_IMPORTED_MODULE_1__.default.baseURL + 'storage/upload-image/' + chat.upload + '.jpg',
+            alt: chat.upload,
+            style: divStyle
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "clearfix"
         })]
@@ -5317,7 +5328,7 @@ var MessageComponent = function MessageComponent(props) {
           style: divStyle,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             style: {
-              border: '1px solid #999'
+              border: chat.send_id == userID ? '1px solid #999' : 'none'
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
               className: "text-sm px-4 py-2 text-gray-700",
@@ -5330,6 +5341,37 @@ var MessageComponent = function MessageComponent(props) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "clearfix"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          id: "imageModal",
+          className: "h-screen w-screen bg-black bg-opacity-70 fixed top-0 z-50 hidden",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "w-11/12 bg-white absolute rounded-xl",
+            style: {
+              top: '50%',
+              marginTop: '-6rem',
+              left: '50%',
+              marginLeft: '-45.83333%',
+              transform: 'translateY(-25%)'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "relative",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "absolute w-5 h-5 top-2 right-2 rounded-full bg-red-400 text-white text-xs text-center",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+                  onClick: function onClick() {
+                    $("div#imageModal").fadeOut(200);
+                  },
+                  className: "leading-5",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+                    className: "fas fa-times"
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                src: "",
+                className: "w-full"
+              })]
+            })
+          })
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
