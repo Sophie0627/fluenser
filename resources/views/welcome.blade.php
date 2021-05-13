@@ -13,7 +13,7 @@
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -238,7 +238,7 @@
                 </div>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Collaborate completed time to
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Collaborate completed, time to
                         leave a review!</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-star"></i></div>
                 </div>

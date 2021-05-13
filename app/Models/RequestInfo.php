@@ -13,13 +13,21 @@ class RequestInfo extends Model
     protected $table = 'request_info';
 
     protected $fillable = [
+        'request_id',
+        'title',
         'content',
         'amount',
         'unit',
+        'gift',
         'brand',
         'status',
         'accepted',
+        'sr_review',
+        'rs_review',
     ];
+    /**
+     * @var int|mixed
+     */
 
     public function getRequestInfoByID($request_id) {
         $requestInfo = DB::table('request_info')

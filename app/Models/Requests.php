@@ -31,7 +31,7 @@ class Requests extends Model
             $task->name = $users[0]->name;
 
             $created = date_create($task->created_at);
-            $now = date_create(date('Y-m-d h:i:sa'));
+            $now = date_create(gmdate('Y-m-d h:i:sa'));
             $interval = date_diff($created, $now);
             if($interval->format('%d') > 0)
                 $task->interval = $interval->format('%d day');
@@ -43,7 +43,7 @@ class Requests extends Model
                 $task->interval = $interval->format('%i minutes');
 
             if($interval->format('%h') == 0 && $interval->format('%d') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0)
-                $task->interval = $interval->format('%sa seconds');
+                $task->interval = $interval->format('%s seconds');
 
             $userTask = UserTask::where('task_id', '=', $task->id)
                     ->where('user_id', '=', Auth::user()->id)
@@ -68,9 +68,8 @@ class Requests extends Model
         foreach ($tasks as $task) {
             $users = $user->getAccountInfoByUserID($task->receive_id);
             $task->name = $users[0]->name;
-
             $created = date_create($task->created_at);
-            $now = date_create(date('Y-m-d h:i:sa'));
+            $now = date_create(gmdate('Y-m-d h:i:sa'));
             $interval = date_diff($created, $now);
             if($interval->format('%d') > 0) $task->interval = $interval->format('%d day');
 
@@ -81,7 +80,7 @@ class Requests extends Model
                 $task->interval = $interval->format('%i minutes');
 
             if($interval->format('%h') == 0 && $interval->format('%d') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0)
-                $task->interval = $interval->format('%sa seconds');
+                $task->interval = $interval->format('%s seconds');
 
             $userTask = UserTask::where('task_id', '=', $task->id)
                     ->where('user_id', '=', Auth::user()->id)

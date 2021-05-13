@@ -36,7 +36,7 @@ class Review extends Model
             $review->name = $name;
 
             $created = date_create($review->created_at);
-            $now = date_create(date('Y-m-d h:i:sa'));
+            $now = date_create(gmdate('Y-m-d h:i:sa'));
             $interval = date_diff($created, $now);
             if($interval->format('%d') > 0)
                 $review->interval = $created->format('Y-m-d');

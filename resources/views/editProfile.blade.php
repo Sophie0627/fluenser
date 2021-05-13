@@ -26,7 +26,7 @@
         </div>
         <div class="w-11/12 mx-auto relative -top-32 bg-white rounded-lg pb-3 pt-1" style="box-shadow: 0 0 10px 0 #999">
           <div class="w-1/3 absolute py-1 px-1 bg-white rounded-full" style="top:0; left:50%; transform: translate(-50%, -60%);box-shadow:0 0 8px #333">
-            <label for="round_img"></label><textarea name="round_img" id="round_img" hidden></textarea>
+            <label for="round_img" class="hidden"></label><textarea name="round_img" id="round_img" hidden></textarea>
             <img class="rounded-full w-full" id="round-image" src="{{ url('/') . '/storage/profile-image/'.$profile->round_img.'.jpg'}}" alt="{{$profile->round_img}}">
             <a class="absolute block w-8 h-8 bg-white rounded-full text-center" style="right:5%; bottom:5%;box-shadow: 0 0 15px #999" onclick="editImg('round')">
               <p class="leading-8 text-lg" style="color: #4addc4">

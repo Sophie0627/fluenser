@@ -34,7 +34,7 @@ class ChatComponent extends React.Component {
     sendMessage(message, file) {
         const api_token = $("meta[name=api-token]").attr('content');
         const bodyFormData = new FormData();
-        bodyFormData.append('inbox_id', this.state.chats[0].inbox_id);
+        bodyFormData.append('inbox_id', this.state.inboxInfo.id);
         if (message != '')
             bodyFormData.append('msg', message);
         console.log(file);
@@ -100,7 +100,7 @@ class ChatComponent extends React.Component {
     handleBlock() {
         const api_token = $("meta[name=api-token]").attr('content');
         const headers = {"Accept": 'application/json'};
-        API.get(`block/${this.state.chats[0].inbox_id}/${this.state.accountInfo.id}?api_token=${api_token}`, {headers})
+        API.get(`block/${this.state.inboxInfo.id}/${this.state.accountInfo.id}?api_token=${api_token}`, {headers})
             .then((res) => {
                 if (res.status == 200) {
                     const newInbox = res.data.inbox;
@@ -238,23 +238,28 @@ class ChatComponent extends React.Component {
                             showDetail={() => this.showDetail()}
                             parent='chat'
                         />
-                        <div style={{height: containerHeight + 'px', overflow: 'auto'}} className="bg-gray-100">
-                            <div id="chatcontainer" className="relative">
-                                {
-                                    this.state.chats.map((chat, i) => {
-                                        return (
-                                            <div key={i} className="w-full mx-auto rounded px-2 mt-5">
-                                                <MessageComponent
-                                                    chat={chat}
-                                                    userID={this.state.userID}
-                                                />
-                                            </div>
-                                        )
-                                    })
-                                }
-                                <div className="h-40"/>
-                            </div>
-                        </div>
+                        {
+                            (this.state.chats.length === 0)?
+                                null
+                                :
+                                <div style={{height: containerHeight + 'px', overflow: 'auto'}} className="bg-gray-100">
+                                    <div id="chatcontainer" className="relative">
+                                        {
+                                            this.state.chats.map((chat, i) => {
+                                                return (
+                                                    <div key={i} className="w-full mx-auto rounded px-2 mt-5">
+                                                        <MessageComponent
+                                                            chat={chat}
+                                                            userID={this.state.userID}
+                                                        />
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                        <div className="h-40"/>
+                                    </div>
+                                </div>
+                        }
                         <InputComponent
                             inboxID={this.props.inboxID}
                             requestInfo={this.state.requestInfo}

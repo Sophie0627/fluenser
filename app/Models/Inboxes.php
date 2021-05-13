@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use App\Models\Inboxes;
 
 class Inboxes extends Model
 {
@@ -23,12 +22,12 @@ class Inboxes extends Model
                 ->where('user1_id', '=', $user1_id)
                 ->where('user2_id', '=', $user2_id)
                 ->get();
-        
+
         if(count($inbox) == 0) {
             $inbox = DB::table('inboxes')
             ->where('user2_id', '=', $user1_id)
             ->where('user1_id', '=', $user2_id)
-            ->get();         
+            ->get();
         }
 
         if(count($inbox) == 0) {

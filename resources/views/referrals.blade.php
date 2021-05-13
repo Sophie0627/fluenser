@@ -51,11 +51,11 @@
         Reffered Users
         <div class="rounded-t-lg" style="box-shadow:0 0 3px 3px lightgray;">
           <div id="tb_header" class="bg-gray-900 rounded-t-lg text-white py-2 text-center tracking-tighter" style="font-size: 10px;">
-            <div style="width: 32%; float:left; text-center">Influencer</div>
-            <div style="width: 11%; float:left; text-center">Gifted project</div>
-            <div style="width: 11%; float:left; text-center">Paid project</div>
-            <div style="width: 28%; float:left; text-center">Influencer earnings</div>
-            <div style="width: 18%; float:left; text-center">My Earnings</div>
+            <div style="width: 32%; float:left;" class="text-center md:text-md">Influencer</div>
+            <div style="width: 11%; float:left;" class="text-center md:text-md">Gifted</div>
+            <div style="width: 11%; float:left;" class="text-center md:text-md">Paid</div>
+            <div style="width: 28%; float:left;" class="text-center md:text-md">Influencer earnings</div>
+            <div style="width: 18%; float:left;" class="text-center md:text-md">My earnings</div>
             <div class="clearfix"></div>
           </div>
           <div id="tb_body" class="text-center">
@@ -67,10 +67,10 @@
                       {{ $referral->influencerInfo->name }}
                     </span>
                   </div>
-                  <div style="width: 11%; float:left; text-center">{{ $referral->influencerInfo->giftedCount }}</div>
-                  <div style="width: 11%; float:left; text-center">{{ $referral->influencerInfo->paidCount }}</div>
-                  <div style="width: 28%; float:left; text-center">{{ $referral->influencerInfo->earned }}</div>
-                  <div style="width: 18%; float:left; text-center">{{ $referral->influencerInfo->earned / 10 }}</div>
+                  <div style="width: 11%; float:left;" class="text-center">{{ $referral->influencerInfo->giftedCount }}</div>
+                  <div style="width: 11%; float:left;" class="text-center">{{ $referral->influencerInfo->paidCount }}</div>
+                  <div style="width: 28%; float:left;" class="text-center">{{ $referral->influencerInfo->earned }}</div>
+                  <div style="width: 18%; float:left;" class="text-center">{{ $referral->influencerInfo->earned / 10 }}</div>
                   <div class="clearfix"></div>
                 </div>
             @endforeach

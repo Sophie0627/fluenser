@@ -14,6 +14,7 @@ class CreateInboxUserTable extends Migration
     public function up()
     {
         Schema::create('inbox_user', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('inbox_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('isRead');

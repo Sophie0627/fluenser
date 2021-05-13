@@ -84,11 +84,7 @@ class CollaborateController extends Controller
             $request_info->unit = 0;
             $request_info->gift = 1;
         }
-        $request_info->brand = 'unknown';
         $request_info->status = 1;
-        $request_info->accepted = 0;
-        $request_info->sr_review = 0;
-        $request_info->rs_review = 0;
         $request_info->save();
 
         $images = json_decode($input['images']);

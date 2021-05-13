@@ -15,5 +15,5 @@
         <div id="request_id" style="display:none">{{ isset($request_id) ? $request_id : '' }}</div>
     </div>
   </main>
-  <script src="{{ asset('js/app.js') }}" ></script>
+  <script src="{{ asset('public/js/app.js') }}" ></script>
 @endsection

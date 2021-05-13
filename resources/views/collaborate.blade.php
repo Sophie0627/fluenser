@@ -105,7 +105,7 @@
                     </div>
                     <select onchange="onClickCustom()" name="price" id="price" class="block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md @error('price') is-invalid @enderror" placeholder="0.00" style="height: 38px" value="{{ old('price') }}">
                       <option value="10-30">10-30</option>
-                      <option value="30-250">30-250</option>
+                      <option value="30-50">30-250</option>
                       <option value="250-750">250-750</option>
                       <option value="750-1500">750-1500</option>
                       <option id="custom" value="custom">Customise</option>

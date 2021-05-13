@@ -161,8 +161,8 @@
                 </div>
               </div>
               @else
-              <div class="w-full my-2">
-                Please update your profile.
+              <div class="w-full my-2 text-center">
+                Please complete your profile.
               </div>
               @endif
             </div>
@@ -252,12 +252,12 @@
       <div class="w-full md:max-w-7xl mx-auto py-3" style="border-top: 1px solid lightgray">
         <div class="w-8/12 mx-auto">
             @if ($accountInfo->id == Auth::user()->id)
-                <a href={{ route('editProfile', ['username' => Auth::user()->username]) }} class="block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Edit</a>
+                <a href={{ route('editProfile', ['username' => Auth::user()->username]) }} class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Edit</a>
             @else
                 @if ($accountInfo->accountType == 'influencer')
-                <a href={{ route('collaborate', ['user_id' => $accountInfo->id]) }} class="block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Collaborate</a>
+                <a href={{ route('collaborate', ['user_id' => $accountInfo->id]) }} class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Collaborate</a>
                 @else
-                <a onclick="$('div#modal').show();" class="block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" id="sendRequest" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Request</a>
+                <a onclick="$('div#modal').show();" class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" id="sendRequest" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Request</a>
                 @endif
             @endif
         </div>

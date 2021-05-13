@@ -171,7 +171,7 @@ const RequestComponent =(props) => {
                           (request.requestContent.gift == 1)
                           ?
                           <p className="text-xs md:text-sm text-gray-500">
-                            Offer: <span className="text-black font-bold">Gift</span>
+                            Offer: <span className="text-black text-sm font-bold">Gift</span>
                           </p>
                           :
                             (request.requestContent.amount == 0)
@@ -179,7 +179,7 @@ const RequestComponent =(props) => {
                               null
                             :
                             <p className="text-xs md:text-sm text-gray-500">
-                              Offer: <span className="text-black font-bold">{request.requestContent.amount + ' ' + request.requestContent.unit.toUpperCase()}</span>
+                              Offer: <span className="text-black text-sm font-bold">{request.requestContent.amount + ' ' + request.requestContent.unit.toUpperCase()}</span>
                             </p>
                         }
                       </div>
@@ -191,7 +191,7 @@ const RequestComponent =(props) => {
                         ? null
                         :
                         request.requestContent.images.map((image, i) =>(
-                          <div key={i} className="float-left ml-2" style={{ width:'40px', height:'40px' }}>
+                          <div key={i} className="float-left ml-2" style={{ width:'50px', height:'50px' }}>
                             <img src={constant.baseURL + 'storage/task-image/' + image.image + '.jpg'} alt={image.image} className="w-full"/>
                           </div>
                         ))

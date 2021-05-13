@@ -309,25 +309,19 @@ class ProfileController extends Controller
         $profile = Profile::where('user_id', $user_id)->get();
         $profile[0]->introduction = $input['introduction'];
 
-        // // update social links
-        if(isset($input['instagram']) && $input['instagram']) {
+        // update social links
             if($input['instagram-link'] != '')
                 $profile[0]->instagram = $input['instagram-link'];
             if($input['instagram-follow'] != '')
                 $profile[0]->instagram_follows = $input['instagram-follow'];
-        }
-        if(isset($input['youtube']) && $input['youtube']) {
             if($input['youtube-link'] != '')
                 $profile[0]->youtube = $input['youtube-link'];
             if($input['youtube-follow'] != '')
                 $profile[0]->youtube_follows = $input['youtube-follow'];
-        }
-        if(isset($input['tiktok']) && $input['tiktok']) {
             if($input['tiktok-link'] != '')
                 $profile[0]->tiktok = $input['tiktok-link'];
             if($input['tiktok-follow'] != '')
                 $profile[0]->tiktok_follows = $input['tiktok-follow'];
-        }
         $profile[0]->save();
 
 

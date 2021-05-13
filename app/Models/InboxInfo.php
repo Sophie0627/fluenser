@@ -21,30 +21,28 @@ class InboxInfo extends Model
     public function getChatInfo($inboxID) {
         $inbox = DB::table("inboxes")
                 ->where('id', '=', $inboxID)
-                ->get();
-        $request_id = $inbox[0]->request_Id;
+                ->first();
+        $request_id = $inbox->request_id;
         $requestInfo = DB::table('request_info')
                 ->where('request_id', '=', $request_id)
                 ->get();
-        
+
+        $contactID = ($inbox->user1_id == Auth::user()->id) ? $inbox->user2_id : $inbox->user1_id;
+
         $chatInfo = DB::table('inbox_info')
                 ->where('inbox_id', '=', $inboxID)
                 ->orderBy('created_at')
                 ->get();
 
-        $contactID = ($chatInfo[0]->send_id == Auth::user()->id)?       $chatInfo[0]->receive_id :
-                $chatInfo[0]->send_id;
-        
         $sendInfo = DB::table('users')
                 ->where('id', '=', $contactID)
                 ->select('name')
                 ->get();
-    
-                
+
         $sendInfo[0]->chatInfo = $chatInfo;
         $sendInfo[0]->userID = Auth::user()->id;
         $sendInfo[0]->requestInfo = $requestInfo[0];
-        
+
         return $sendInfo[0];
     }
 }

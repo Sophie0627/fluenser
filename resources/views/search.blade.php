@@ -110,10 +110,10 @@
                   <div class="mt-2 w-full">
                     <div class="text-xs md:text-sm flex justify-center">
                       @if (count($account->category) > 0)
-                      <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #f0f0fd;color:#8c82df;">
+                      <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #{{$account->category[0]->back_color}};color:#{{$account->category[0]->text_color}};">
                         <p>{{ $account->category[0]->category_name }}</p>
                       </div>
-                      <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #fcefed;color:#dc8179">
+                      <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #{{$account->category[1]->back_color}};color:#{{$account->category[1]->text_color}}">
                         <p>{{ $account->category[1]->category_name }}</p>
                       </div>
                       @else
@@ -226,10 +226,10 @@
                 <div class="mt-2 w-full">
                   <div class="text-xs md:text-sm flex justify-center">
                     @if (count($account->category) > 0)
-                    <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #f0f0fd;color:#8c82df;">
+                    <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #{{$account->category[0]->back_color}};color:#{{$account->category[0]->text_color}};">
                       <p>{{ $account->category[0]->category_name }}</p>
                     </div>
-                    <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #fcefed;color:#dc8179">
+                    <div class="w-1/3 text-center py-1 rounded mx-1" style="background: #{{$account->category[1]->back_color}};color:#{{$account->category[1]->text_color}};">
                       <p>{{ $account->category[1]->category_name }}</p>
                     </div>
                     @else

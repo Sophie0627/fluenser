@@ -14,7 +14,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <!--<script src="{{ asset('js/app.js') }}" defer></script>-->
+    <!--<script src="{{ asset('public/js/app.js') }}" defer></script>-->
     <!-- pusher scripts-->
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 
@@ -40,7 +40,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/css/all.css') }}">
     <style>
       * {
@@ -360,7 +360,7 @@
             if(con == 'block') $("#user-menu-content").css('display', 'none');
             else $("#user-menu-content").css('display', 'block');
           });
-          checkSession();
+          if(page === 0) checkSession();
 
             $("#searchTab a").click(function() {
                 console.log($(this).attr('href'));
