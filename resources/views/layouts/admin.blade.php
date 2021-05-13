@@ -66,7 +66,7 @@
                 </li>
                 <form action="{{route('logout')}}" method="POST">
                     {{ csrf_field() }}
-                    <li><button class="block border-top border-gray-700 text-decoration-none py-2 px-8 hover:text-gray-300"
+                    <li><button class="w-full block border-top border-gray-700 text-decoration-none py-2 px-8 hover:text-gray-300"
                            href=""><i class="w-10 mx-auto fas fa-sign-out-alt"></i> Logout</button></li>
                 </form>
             </ul>
@@ -91,8 +91,11 @@
                    href="{{ route('adminDashboard') }}"><i class="w-10 mx-auto fas fa-star"></i> Referrals</a></li>
             <li><a class="block border-t border-gray-600 text-decoration-none py-2 px-6 hover:text-gray-300"
                    href="{{ route('adminDashboard') }}"><i class="w-10 mx-auto fas fa-plus-circle"></i> Extras</a></li>
-            <li><a class="block border-t border-gray-600 text-decoration-none py-2 px-6 hover:text-gray-300"
-                   href="{{ route('adminDashboard') }}"><i class="w-10 mx-auto fas fa-sign-out-alt"></i> Logout</a></li>
+            <li>
+                <form action="{{ route('logout') }}" method="post">
+                    <button class="w-full block border-t border-gray-600 text-decoration-none py-2 px-6 hover:text-gray-300"
+                       href="{{ route('adminDashboard') }}"><i class="w-10 mx-auto fas fa-sign-out-alt"></i> Logout</button></li>
+                </form>
         </ul>
     </div>
 </div>
