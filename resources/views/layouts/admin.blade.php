@@ -93,6 +93,7 @@
                    href="{{ route('adminDashboard') }}"><i class="w-10 mx-auto fas fa-plus-circle"></i> Extras</a></li>
             <li>
                 <form action="{{ route('logout') }}" method="post">
+                    {{ csrf_field() }}
                     <button class="w-full block border-t border-gray-600 text-decoration-none py-2 px-6 hover:text-gray-300"
                        href="{{ route('adminDashboard') }}"><i class="w-10 mx-auto fas fa-sign-out-alt"></i> Logout</button></li>
                 </form>
