@@ -5009,17 +5009,25 @@ var ChatTopComponent = function ChatTopComponent(props) {
             className: "fas fa-chevron-left"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "float-left flex-shrink-0",
+          className: "float-left flex-shrink-0 rounded-full",
           style: {
             width: '50px',
             height: '50px',
             margin: '10px 0',
-            marginLeft: '28px'
+            padding: '2px',
+            marginLeft: '28px',
+            background: 'linear-gradient(to right, #06ebbe, #1277d3)'
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-            src: _const__WEBPACK_IMPORTED_MODULE_0__.default.baseURL + 'storage/profile-image/' + props.contactInfo.avatar + '.jpg',
-            alt: props.contactInfo.avatar,
-            className: "rounded-full"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "w-full bg-white rounded-full",
+            style: {
+              padding: '2px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: _const__WEBPACK_IMPORTED_MODULE_0__.default.baseURL + 'storage/profile-image/' + props.contactInfo.avatar + '.jpg',
+              alt: props.contactInfo.avatar,
+              className: "rounded-full"
+            })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           className: "float-left overflow-hidden",
@@ -5260,20 +5268,20 @@ var MessageComponent = function MessageComponent(props) {
   }, []);
 
   var calculateTime = function calculateTime() {
+    var time;
+
+    var moment = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+
     var created_at = chat.created_at;
-
-    if (created_at[created_at.length - 1] == 'Z') {
-      created_at = created_at.slice(0, -8).replace(/:|T|-/g, ',');
-    } else {
-      created_at = created_at.replace(/:| |-/g, ',');
-    }
-
+    var timezone = moment.tz.guess();
+    created_at = moment.utc(created_at).tz(timezone).format();
+    created_at = created_at.replace(/:|T|-/g, ',');
     var datetime = created_at.split(',');
 
     if (datetime[3] >= 12) {
-      var time = datetime[3] - 12 + ":" + datetime[4] + " PM";
+      time = datetime[3] - 12 + ":" + datetime[4] + " PM";
     } else {
-      var time = datetime[3] + ":" + datetime[4] + " AM";
+      time = datetime[3] + ":" + datetime[4] + " AM";
     }
 
     var month = _const__WEBPACK_IMPORTED_MODULE_1__.default.month[parseInt(datetime[1])];

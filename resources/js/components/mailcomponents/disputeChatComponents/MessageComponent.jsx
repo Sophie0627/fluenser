@@ -9,17 +9,17 @@ const MessageComponent = (props) => {
   }, []);
 
   const calculateTime = () => {
-    var created_at = chat.created_at;
-    if(created_at[created_at.length - 1] == 'Z') {
-        created_at = created_at.slice(0, -8).replace(/:|T|-/g, ',');
-    } else {
-        created_at = created_at.replace(/:| |-/g, ',');
-    }
-      var datetime = created_at.split(',');
+      let time;
+      const moment = require('moment-timezone');
+      let created_at = chat.created_at;
+      const timezone = moment.tz.guess();
+      created_at = moment.utc(created_at).tz(timezone).format();
+      created_at = created_at.replace(/:|T|-/g, ',');
+      let datetime = created_at.split(',');
       if(datetime[3] >= 12){
-        var time = datetime[3] - 12 + ":" + datetime[4] + " PM";
+        time = datetime[3] - 12 + ":" + datetime[4] + " PM";
       } else {
-        var time = datetime[3] + ":" + datetime[4] + " AM";
+        time = datetime[3] + ":" + datetime[4] + " AM";
       }
       var month = constant.month[parseInt(datetime[1])];
       var day = datetime[2];
