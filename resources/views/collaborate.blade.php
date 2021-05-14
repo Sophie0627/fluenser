@@ -75,7 +75,17 @@
                   <a class="payMethod active" id="money">
                     <div class="payMethod float-left" style="width: 90px; height: 90px; border-radius:50%; background:white; border: 1px solid lightgray; padding:15px">
                       <p class="text-3xl text-gray-500 text-center" style="line-height: 35px">
-                          <img src="{{ asset('img/dollar.svg') }}" alt="dollar-sign">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="42" viewBox="0 0 25 42">
+                              <defs>
+                                  <style>
+                                      .cls-1 {
+                                          fill: #fff;
+                                          fill-rule: evenodd;
+                                      }
+                                  </style>
+                              </defs>
+                              <path id="_" data-name="$" class="cls-1" d="M13.079,18.57V8.254a5.794,5.794,0,0,1,3.212,1.618A5.425,5.425,0,0,1,17.768,12.8h5.768a9.188,9.188,0,0,0-3.142-6.049,12.048,12.048,0,0,0-7.315-2.72V0H11.485V3.986A13.738,13.738,0,0,0,5.764,5.112,9.121,9.121,0,0,0,1.895,8.254,8.007,8.007,0,0,0,.512,12.9a7.989,7.989,0,0,0,1.547,5.158,9.269,9.269,0,0,0,3.564,2.79,59.889,59.889,0,0,0,5.862,2.04V33.529A5.97,5.97,0,0,1,7.85,31.653a5.815,5.815,0,0,1-1.524-3.329H0.605a9.292,9.292,0,0,0,3.283,6.495,12.844,12.844,0,0,0,7.6,2.931v3.845h1.594V37.843h0.094a13.327,13.327,0,0,0,6.1-1.266A8.893,8.893,0,0,0,23,33.224,8.69,8.69,0,0,0,24.24,28.7a8.177,8.177,0,0,0-1.43-5.041,9.038,9.038,0,0,0-3.47-2.837,45.5,45.5,0,0,0-5.369-1.969ZM6.233,12.708A4.162,4.162,0,0,1,7.639,9.356a5.933,5.933,0,0,1,3.845-1.243v9.941a11.83,11.83,0,0,1-3.892-2.087,4.115,4.115,0,0,1-1.36-3.259h0ZM13.079,33.67V23.4a12.383,12.383,0,0,1,4.033,2.087,4.162,4.162,0,0,1,1.407,3.353,4.579,4.579,0,0,1-1.43,3.47,5.586,5.586,0,0,1-4.009,1.36h0Z"/>
+                          </svg>
                       </p>
                       <p class="text-center text-xs text-gray-500" style="line-height: 25px">
                         Money
@@ -85,7 +95,9 @@
                   <a class="payMethod" id="both">
                     <div class="payMethod float-right mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:white; border: 1px solid lightgray; padding:15px">
                       <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px">
-                          <img src="{{ asset('img/bag.svg') }}" alt="bag-sign">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="43" viewBox="0 0 35 43">
+                              <image width="35" height="43" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAArCAYAAADyijE0AAACeElEQVRYhc2Yv2sUQRTHP7eJCf5I/IFeLhchGA1pjI2dWKiVhUZrCzvBQlvxX9A/w8bmhERUEEHE3kIwltpoQESCEUI0/mLu3sjcvLfrbcjt3AeOY9/M2/nuvB/Dbq3VarFFbgIXgTFgFPgOrANPgbtbueWwsvyffcBLIAPuAw+BFaABXACuANeAM8DHfooZkYWfAZeisS/AMnAHuAd8AA4Aq+ouOZQV8wB4ZQiJuQqMA4+BU2o0hzJiTgDngP1qxOYy8FV8npszIjJlyecG8AL4kTtD8wS4rqw5lBFTB94qazHLEq5tF7MJ/FTWYtYLRyOsnFkAdgO/A9s3YAjYK71ll/LSuHBOyf95aQl/ZFZNHm4R+OU9YzGuFJeMG29KMzsofaVXHgEbsuio4TMDvPcXcZgm1fQOK/JU7ik+q1GbDXmITPwt6qEtFtMwHJAQDcuv1zzLIj+L6SIxxwwHpF+MS86sqVGbNTm3xgq68Fx4ESueUdM7LEr8XTXdBo6oGZrXwC1gB3BWmmZMM7zuNWcWpGe48+a0GrU5KTvyRrqxRdd68c7k5cx8ifB4XCm/U9aC9XpN4H6RW00u8ycqFtMIj4tQTF2aWpXsDKMRiylzVm0XhywxeZXUb/61k1DMXOUyOsxaYnppZP1gyhJTdSWpdUMxVfcYjymmrqZVgyrtkfjQqpBJX95ezLScJSkY8hXlxRxNJMRzOBSTquF5JkIxqSrJ02SAdqa9vheTqpI8XWJSh6krZ1I1PI/bjFomr6qpc8Y1vWYmPWaPGq4Wp2M2i9/qEtLemdQh8jQGScxA7UxbzHFlTsO8e711X7Y/BV+VUlADVv8C2aNRDUME918AAAAASUVORK5CYII="/>
+                          </svg>
                       </p>
                       <p class="text-center text-xs  text-gray-500" style="line-height: 25px">
                         Both
@@ -95,7 +107,18 @@
                   <a class="payMethod" id="gift">
                     <div class="payMethod mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:white; border: 1px solid lightgray; padding:15px">
                       <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px">
-                          <img src="{{ asset('img/bag_dollar.svg') }}" alt="bag-dollar-sign">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37" height="45" viewBox="0 0 37 45">
+                              <defs>
+                                  <style>
+                                      .cls-1 {
+                                          fill: #fff;
+                                          fill-rule: evenodd;
+                                      }
+                                  </style>
+                              </defs>
+                              <image width="37" height="45" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAtCAYAAAApzaJuAAACoklEQVRYhc2Yu2sUQRyAv9sY4xON8ZKNMQkmEgtTaGehYBNRENRK8A+wEETstLCKgi8E0/gfWF0tWIj4IOKjs7NRsdFC4wPR4JNZfnM3N7Mz2Y3mZj84uJ35zdy38/jN7tUajQb/wGngELARWAN8Bd4Dt4ELi+12mVNSjEngFvABUHd1B3gL1IG9wFHgJHAEeNQJKSX0HJgBTll1L4EnwGVgGpgF9gAPnV4CLEbqGXAROOvUtHMOmAMeAN3ATyfCQ5Jf7OWM/NBCQpprwAvgklMToKzUMeCKUxrmPHAwGGFRRqoH6ALuOjVh7skyGQhGGZSRqgErZfrKoHboCrmpQvgWuurktyW0DvgOrAeWOy38qBw2D6zOaZdIn+13n5M8bwJTwC9L6jHwGuiXXPTHq9HeblZGS8ntstp1yW4+YDbKG6kp6cBmVPLTDhErygjwCtjpabdfpnZeF9hrqlemJ4+P0vhLTl2IT9LucyAmNS9sqX7P6Ck2yHD7pH3odr2eeuyZsaXqTngLdb6tAp4CP5xaP/dlpEJHzZB5YY/KmBPeYkbONrULj8vRUYSrwBtgM3DCEz9hXtgjtdUJb3FDDtfrkjKKouJ3i5yP4dBIpZ5Gin3yKcth+YRo25X2SBU+Cv4zC+6+GNSrKJVK2sgwpdYCg054Z+iT3elIjclTQCzG86SGIwphLvYkrzASA1WUas6UKTXuhHWWiTypLZGlNukvplSsHKVpPr5oqVJvG0tEKvmqKTUiD2Mx6dZPKVoq9nrSZCeKloqdDjSVlMo8qiaVbbbEvKgAlZRSWaApFfuI0SiPnkReEked6jio17fBRKbO91Ycg77E82dGTIaSCq0nzbYqSmUjVZXEqUmV1HanOC6Tatd9A94V/LtwqakBc38B1OlQMqWitSoAAAAASUVORK5CYII="/>
+                              <path id="_" data-name="$" class="cls-1" d="M18.7,28.757V23.941a2.7,2.7,0,0,1,1.5.755,2.532,2.532,0,0,1,.69,1.368h2.692a4.289,4.289,0,0,0-1.467-2.824,5.624,5.624,0,0,0-3.415-1.27V20.089H17.959v1.861a6.412,6.412,0,0,0-2.671.525,4.257,4.257,0,0,0-1.806,1.467,4.168,4.168,0,0,0,.077,4.575,4.327,4.327,0,0,0,1.664,1.3,27.907,27.907,0,0,0,2.736.952V35.74a2.788,2.788,0,0,1-1.7-.876,2.715,2.715,0,0,1-.711-1.554H12.881a4.337,4.337,0,0,0,1.532,3.032,6,6,0,0,0,3.546,1.368v1.795H18.7V37.754h0.044a6.22,6.22,0,0,0,2.846-.591,4.151,4.151,0,0,0,1.74-1.565,4.057,4.057,0,0,0,.58-2.112,3.818,3.818,0,0,0-.668-2.353,4.22,4.22,0,0,0-1.62-1.324,21.219,21.219,0,0,0-2.506-.919Zm-3.2-2.736a1.942,1.942,0,0,1,.657-1.565,2.77,2.77,0,0,1,1.8-.58v4.641a5.52,5.52,0,0,1-1.817-.974,1.921,1.921,0,0,1-.635-1.521h0Zm3.2,9.785V31.012a5.783,5.783,0,0,1,1.883.974,1.943,1.943,0,0,1,.657,1.565,2.138,2.138,0,0,1-.668,1.62,2.608,2.608,0,0,1-1.872.635h0Z"/>
+                          </svg>
                       </p>
                       <p class="text-center text-xs  text-gray-500" style="line-height: 25px">
                         Gift
