@@ -157,7 +157,7 @@ const RequestComponent =(props) => {
                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
                         }}>
                             <div className="w-full bg-white rounded-full" style={{padding: '2px'}}>
-                            <img src={ constant.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg' } alt={ request.accountInfo[0].avatar } className="rounded-full" style={{width:'100%', float:'left'}}/>
+                            <img src={ constant.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg' } alt={ request.accountInfo[0].avatar } className="rounded-full" style={{width:'100%'}}/>
                             </div>
                         </div>
                       <div style={{marginLeft:'70px'}}>

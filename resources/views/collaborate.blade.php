@@ -74,7 +74,9 @@
                   </p>
                   <a class="payMethod active" id="money">
                     <div class="payMethod float-left" style="width: 90px; height: 90px; border-radius:50%; background:white; border: 1px solid lightgray; padding:15px">
-                      <p class="text-3xl text-gray-500 text-center" style="line-height: 35px"><i class="fas fa-dollar-sign"></i></p>
+                      <p class="text-3xl text-gray-500 text-center" style="line-height: 35px">
+                          <img src="{{ asset('img/dollar.svg') }}" alt="dollar-sign">
+                      </p>
                       <p class="text-center text-xs text-gray-500" style="line-height: 25px">
                         Money
                       </p>
@@ -82,7 +84,9 @@
                   </a>
                   <a class="payMethod" id="both">
                     <div class="payMethod float-right mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:white; border: 1px solid lightgray; padding:15px">
-                      <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px"><i class="fas fa-shopping-bag"></i></p>
+                      <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px">
+                          <img src="{{ asset('img/bag.svg') }}" alt="bag-sign">
+                      </p>
                       <p class="text-center text-xs  text-gray-500" style="line-height: 25px">
                         Both
                       </p>
@@ -90,7 +94,9 @@
                   </a>
                   <a class="payMethod" id="gift">
                     <div class="payMethod mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:white; border: 1px solid lightgray; padding:15px">
-                      <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px"><i class="fas fa-shopping-bag"></i></p>
+                      <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px">
+                          <img src="{{ asset('img/bag_dollar.svg') }}" alt="bag-dollar-sign">
+                      </p>
                       <p class="text-center text-xs  text-gray-500" style="line-height: 25px">
                         Gift
                       </p>

@@ -105,6 +105,8 @@
                   <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background:#{{ $categories[0]->back_color }}">
                     <p class="text-sm text-center" style="color: #{{ $categories[0]->text_color }}; font-weight:500;">{{ $categories[0]->category_name }}</p>
                   </div>
+                @endif
+                    @if(count($categories) > 1)
                   <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background: #{{ $categories[1]->back_color }}">
                     <p class="text-sm text-center" style="color: #{{ $categories[1]->text_color }}; font-weight:500;">{{ $categories[1]->category_name }}</p>
                   </div>

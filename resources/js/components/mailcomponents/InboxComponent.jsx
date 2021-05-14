@@ -209,7 +209,7 @@ class InboxComponent extends Component {
                                             time = Math.floor(differencs / 1000 / 60 / 60) + 'h';
                                         } else if(1000 * 60 * 60 * 24 * 7 > differencs > 1000 * 60 * 60 * 24)
                                             time = Math.floor(differencs / 1000 / 60 / 60 / 24) + 'd';
-                                        else
+                                        else if(1000 * 60 * 60 * 24 *7 < differencs)
                                             time = Math.floor(differencs / 1000 / 60 /60 /24 /7) + 'w';
                                         // const timezone = moment.tz.guess();
                                         // created_at = moment.utc(created_at).tz(timezone).format();
@@ -240,7 +240,7 @@ class InboxComponent extends Component {
                                                                 <img
                                                                     src={constant.baseURL + 'storage/profile-image/' + inbox.accountInfo[0].avatar + '.jpg'}
                                                                     alt={inbox.accountInfo[0].avatar} className="rounded-full"
-                                                                    style={{width: '100%', float: 'left'}}/>
+                                                                    style={{width: '100%'}}/>
                                                             </div>
                                                         </div>
                                                         <a href="#" onClick={() => this.onInboxClick(inbox.id)}>
@@ -277,7 +277,7 @@ class InboxComponent extends Component {
                                                     </div>
                                                 </div>
                                                 <a onClick={() => this.showDeleteConfirmModal(inbox.id)}><i
-                                                    className="fas fa-times text-xs text-gray-500 absolute bottom-2 right-0.5"/></a>
+                                                    className="fas fa-times text-xs text-gray-500 absolute right-0.5" style={{bottom:'20px'}}/></a>
                                                 <hr className="pb-3"/>
                                             </div>
                                         );
