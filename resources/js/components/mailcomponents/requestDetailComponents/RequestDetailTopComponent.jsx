@@ -29,7 +29,7 @@ const RequestDetailTopComponent = (props) => {
       {
           (contactInfo.loggedIn == 1)
               ?
-              <span>Aactive now</span>
+              <span>Active now</span>
               :
               <span>{contactInfo.Interval}</span>
       }

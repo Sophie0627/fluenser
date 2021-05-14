@@ -2260,8 +2260,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  // baseURL: 'http://localhost/api/'
-  baseURL: 'https://fluee123.host/api/'
+  baseURL: 'http://localhost/api/' // baseURL: 'https://fluee123.host/api/'
+
 }));
 
 /***/ }),
@@ -2278,8 +2278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var constant = {
-  // baseURL: 'http://localhost/',
-  baseURL: 'https://fluee123.host/',
+  baseURL: 'http://localhost/',
+  // baseURL: 'https://fluee123.host/',
   month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nev', 'Dec'],
   request_status: ['posted', 'accepted', 'completed', 'reviewed', 'disputed']
 };
@@ -3275,37 +3275,61 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                 children: this.state.showInboxes.map(function (inbox, i) {
                   var moment = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
 
-                  var created_at = inbox.accountInfo[0].created_at;
-                  var timezone = moment.tz.guess();
-                  created_at = moment.utc(created_at).tz(timezone).format();
-                  created_at = created_at.replace(/:|T|-/g, ',');
-                  var datetime = created_at.split(',');
+                  var now = Date.now();
+                  var created_at = new Date(inbox.accountInfo[0].created_at);
+                  var differencs = Math.abs(now - created_at);
                   var time;
 
-                  if (datetime[3] >= 12) {
-                    time = datetime[3] - 12 + ":" + datetime[4] + " PM";
-                  } else {
-                    time = datetime[3] + ":" + datetime[4] + " AM";
-                  }
+                  if (differencs < 1000 * 60 * 60) {
+                    time = Math.floor(differencs / 1000 / 60) + 'm';
+                  } else if (1000 * 60 * 60 * 24 > differencs > 1000 * 60 * 60) {
+                    time = Math.floor(differencs / 1000 / 60 / 60) + 'h';
+                  } else if (1000 * 60 * 60 * 24 * 7 > differencs > 1000 * 60 * 60 * 24) time = Math.floor(differencs / 1000 / 60 / 60 / 24) + 'd';else time = Math.floor(differencs / 1000 / 60 / 60 / 24 / 7) + 'w'; // const timezone = moment.tz.guess();
+                  // created_at = moment.utc(created_at).tz(timezone).format();
+                  // created_at = created_at.replace(/:|T|-/g, ',');
+                  // let datetime = created_at.split(',');
+                  // let time;
+                  // if (datetime[3] >= 12) {
+                  //     time = datetime[3] - 12 + ":" + datetime[4] + " PM";
+                  // } else {
+                  //     time = datetime[3] + ":" + datetime[4] + " AM";
+                  // }
+                  // const month = constant.month[parseInt(datetime[1])];
+                  // const day = datetime[2];
+                  // time = time + ', ' + month + ' ' + day;
 
-                  var month = _const__WEBPACK_IMPORTED_MODULE_2__.default.month[parseInt(datetime[1])];
-                  var day = datetime[2];
-                  time = time + ', ' + month + ' ' + day;
+
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "w-11/12 mx-auto rounded px-2 relative",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                       className: "w-full",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                         className: "w-full",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                          src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'storage/profile-image/' + inbox.accountInfo[0].avatar + '.jpg',
-                          alt: inbox.accountInfo[0].avatar,
-                          className: "rounded-full",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                          className: "float-left flex-shrink-0 rounded-full",
                           style: {
                             width: '55px',
                             height: '55px',
-                            "float": 'left'
-                          }
+                            margin: '10px 0',
+                            padding: '2px',
+                            marginLeft: '28px',
+                            background: 'linear-gradient(to right, #06ebbe, #1277d3)'
+                          },
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                            className: "w-full bg-white rounded-full",
+                            style: {
+                              padding: '2px'
+                            },
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                              src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'storage/profile-image/' + inbox.accountInfo[0].avatar + '.jpg',
+                              alt: inbox.accountInfo[0].avatar,
+                              className: "rounded-full",
+                              style: {
+                                width: '100%',
+                                "float": 'left'
+                              }
+                            })
+                          })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
                           href: "#",
                           onClick: function onClick() {
@@ -3355,7 +3379,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                         return _this3.showDeleteConfirmModal(inbox.id);
                       },
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
-                        className: "fas fa-times text-xs text-red-500 absolute bottom-1 right-0.5"
+                        className: "fas fa-times text-xs text-gray-500 absolute bottom-2 right-0.5"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("hr", {
                       className: "pb-3"
@@ -3608,15 +3632,31 @@ var RequestComponent = function RequestComponent(props) {
               id: request.id,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "pt-7",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                  src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg',
-                  alt: request.accountInfo[0].avatar,
-                  className: "rounded-full",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                  className: "float-left flex-shrink-0 rounded-full",
                   style: {
                     width: '55px',
                     height: '55px',
-                    "float": 'left'
-                  }
+                    margin: '10px 0',
+                    padding: '2px',
+                    marginLeft: '28px',
+                    background: 'linear-gradient(to right, #06ebbe, #1277d3)'
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                    className: "w-full bg-white rounded-full",
+                    style: {
+                      padding: '2px'
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+                      src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg',
+                      alt: request.accountInfo[0].avatar,
+                      className: "rounded-full",
+                      style: {
+                        width: '100%',
+                        "float": 'left'
+                      }
+                    })
+                  })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
                     marginLeft: '70px'
@@ -6084,7 +6124,7 @@ var RequestDetailShowComponent = function RequestDetailShowComponent(props) {
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
         className: "text-gray-500 text-xs md:text-sm ml-2",
         children: ["Offer:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-          className: "text-gray-600 font-bold",
+          className: "text-gray-600 font-bold text-sm md:text-xl",
           children: requestInfo.amount + requestInfo.unit.toUpperCase()
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -6221,7 +6261,7 @@ var RequestDetailTopComponent = function RequestDetailTopComponent(props) {
       children: [contactInfo.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
         className: "text-sm md:text-md font-normal",
         children: [contactInfo.loggedIn == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-          children: "Aactive now"
+          children: "Active now"
         }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
           children: contactInfo.Interval
         }), contactInfo.Interval]

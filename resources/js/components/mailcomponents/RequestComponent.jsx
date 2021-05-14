@@ -148,7 +148,18 @@ const RequestComponent =(props) => {
                 return(
                   <div key={i} className="w-11/12 mx-auto" id={ request.id }>
                     <div className='pt-7'>
-                      <img src={ constant.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg' } alt={ request.accountInfo[0].avatar } className="rounded-full" style={{width:'55px', height:'55px', float:'left'}}/>
+                        <div className="float-left flex-shrink-0 rounded-full" style={{
+                            width: '55px',
+                            height: '55px',
+                            margin: '10px 0',
+                            padding: '2px',
+                            marginLeft: '28px',
+                            background: 'linear-gradient(to right, #06ebbe, #1277d3)'
+                        }}>
+                            <div className="w-full bg-white rounded-full" style={{padding: '2px'}}>
+                            <img src={ constant.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg' } alt={ request.accountInfo[0].avatar } className="rounded-full" style={{width:'100%', float:'left'}}/>
+                            </div>
+                        </div>
                       <div style={{marginLeft:'70px'}}>
                         <p className="text-md md:text-lg font-bold relative">
                           { request.accountInfo[0].name }

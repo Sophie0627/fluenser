@@ -23,7 +23,7 @@ const RequestDetailShowComponent = (props) => {
                         :
                         <p className="text-gray-500 text-xs md:text-sm ml-2">
                             Offer:
-                            <span className="text-gray-600 font-bold">{requestInfo.amount + (requestInfo.unit).toUpperCase()}</span>
+                            <span className="text-gray-600 font-bold text-sm md:text-xl">{requestInfo.amount + (requestInfo.unit).toUpperCase()}</span>
                         </p>
                 }
                 <div id="reqeustImages" className="mt-2">

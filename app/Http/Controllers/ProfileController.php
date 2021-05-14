@@ -38,7 +38,7 @@ class ProfileController extends Controller
             if($interval->format('%m') > 0)
                 $accountInfo[0]->interval = $interval->format('%m month');
             if($interval->format('%m') == 0 && $interval->format('%h') > 0)
-                $accountInfo[0]->interval = $interval->format("%h hour");
+                $accountInfo[0]->interval = $interval->format("%h hours");
             if($interval->format('%h') == 0 && $interval->format('%m') == 0 && $interval->format('%i') > 0)
                 $accountInfo[0]->interval = $interval->format('%i minutes');
             if($interval->format('%h') == 0 && $interval->format('%m') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0)

@@ -258,11 +258,15 @@
       let selectedCategories = $(inputElem).val();
       const checkboxes = $("div#categories_box input[type='checkbox']");
       selectedCategories = '';
+      let count = 0;
       for (let i = 0; i < checkboxes.length; i++) {
           const checkbox = checkboxes[i];
-          if($(checkbox).is(':checked')) {
+          if($(checkbox).is(':checked') && count <2) {
               selectedCategories += $(checkbox).parent().text();
               console.log(selectedCategories);
+              count ++;
+          } else if($(checkbox).is(':checked') && count >= 2){
+              $(elem).trigger('click');
           }
       }
       inputElem.val(selectedCategories);

@@ -68,7 +68,7 @@
                 @if($accountInfo->loggedIn)
                 <div style="margin-left: 30%;" class="h-full text-green-500">
                   <span><i class="fas fa-circle" style="font-size: 5px; line-height:2rem;"></i></span>
-                  <span class="leading-8 text-xs md:text-sm" style="line-height: 2rem;" style="font-family: 'Poppins', sans-serif; font-weight: 500;">
+                  <span class="leading-8 text-xs md:text-sm text-gray-500" style="line-height: 2rem;font-family: 'Poppins', sans-serif; font-weight: 500;">
                     Active now
                   </span>
                 </div>
@@ -96,6 +96,7 @@
                         @endif
                       @endfor
                     </span>
+                  <span class="ml-1 text-gray-700" style="line-height: 20px;">({{ $accountInfo->reviews }})</span>
                   </div>
                   <p class="text-sm md:text-md text-gray-700 mt-1" style="font-weight: 400;"><i style="color: #119dab" class="fas fa-map-marker-alt"></i> {{ $accountInfo->state.', '.$accountInfo->country }}</p>
                 </div>
