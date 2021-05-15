@@ -2260,8 +2260,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  // baseURL: 'http://localhost/api/'
-  baseURL: 'https://fluee123.host/api/'
+  baseURL: 'http://localhost/api/' // baseURL: 'https://fluee123.host/api/'
+
 }));
 
 /***/ }),
@@ -2278,8 +2278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var constant = {
-  // baseURL: 'http://localhost/',
-  baseURL: 'https://fluee123.host/',
+  baseURL: 'http://localhost/',
+  // baseURL: 'https://fluee123.host/',
   month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nev', 'Dec'],
   request_status: ['posted', 'accepted', 'completed', 'reviewed', 'disputed']
 };
@@ -3273,32 +3273,31 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                   overflow: 'auto'
                 },
                 children: this.state.showInboxes.map(function (inbox, i) {
+                  console.log(inbox);
+
                   var moment = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
 
-                  var now = Date.now();
-                  var created_at = new Date(inbox.accountInfo[0].created_at);
-                  var differencs = Math.abs(now - created_at);
-                  var time;
+                  var now = moment.utc(Date.now());
+                  var created_at = moment.utc(inbox.inboxContent[0].created_at);
+                  var difference = Math.abs(now - created_at);
+                  console.log(difference);
+                  var time = 0;
 
-                  if (differencs < 1000 * 60 * 60) {
-                    time = Math.floor(differencs / 1000 / 60) + 'm';
-                  } else if (1000 * 60 * 60 * 24 > differencs > 1000 * 60 * 60) {
-                    time = Math.floor(differencs / 1000 / 60 / 60) + 'h';
-                  } else if (1000 * 60 * 60 * 24 * 7 > differencs > 1000 * 60 * 60 * 24) time = Math.floor(differencs / 1000 / 60 / 60 / 24) + 'd';else if (1000 * 60 * 60 * 24 * 7 < differencs) time = Math.floor(differencs / 1000 / 60 / 60 / 24 / 7) + 'w'; // const timezone = moment.tz.guess();
-                  // created_at = moment.utc(created_at).tz(timezone).format();
-                  // created_at = created_at.replace(/:|T|-/g, ',');
-                  // let datetime = created_at.split(',');
-                  // let time;
-                  // if (datetime[3] >= 12) {
-                  //     time = datetime[3] - 12 + ":" + datetime[4] + " PM";
-                  // } else {
-                  //     time = datetime[3] + ":" + datetime[4] + " AM";
-                  // }
-                  // const month = constant.month[parseInt(datetime[1])];
-                  // const day = datetime[2];
-                  // time = time + ', ' + month + ' ' + day;
+                  if (difference < 1000 * 60 * 60) {
+                    console.log('minutes');
+                    time = Math.floor(difference / 1000 / 60) + ' minutes';
+                  } else if (1000 * 60 * 60 * 24 > difference && difference > 1000 * 60 * 60) {
+                    console.log('hours');
+                    time = Math.floor(difference / 1000 / 60 / 60) + ' hours';
+                  } else if (1000 * 60 * 60 * 24 * 7 > difference && difference > 1000 * 60 * 60 * 24) {
+                    console.log('hours');
+                    time = Math.floor(difference / 1000 / 60 / 60 / 24) + ' days';
+                  } else if (1000 * 60 * 60 * 24 * 7 < difference) {
+                    console.log('hours');
+                    time = Math.floor(difference / 1000 / 60 / 60 / 24 / 7) + ' weeks';
+                  }
 
-
+                  console.log(time + "time");
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                     className: "w-11/12 mx-auto rounded px-2 relative",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3310,7 +3309,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                           style: {
                             width: '55px',
                             height: '55px',
-                            margin: '10px 0',
+                            margin: '5px 0',
                             padding: '2px',
                             marginLeft: '28px',
                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
@@ -3336,7 +3335,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                           },
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                             style: {
-                              marginLeft: '75px',
+                              marginLeft: '100px',
                               paddingTop: '3px'
                             },
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
@@ -3352,7 +3351,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                           })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                           style: {
-                            marginLeft: '75px',
+                            marginLeft: '100px',
                             height: '40px',
                             paddingTop: '3px',
                             paddingBottom: '10px',
@@ -6125,7 +6124,7 @@ var RequestDetailShowComponent = function RequestDetailShowComponent(props) {
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
         className: "text-gray-500 text-xs md:text-sm ml-2",
         children: ["Offer:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-          className: "text-gray-600 font-bold text-sm md:text-xl",
+          className: "text-gray-600 font-bold text-sm md:text-lg",
           children: requestInfo.amount + requestInfo.unit.toUpperCase()
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -6142,8 +6141,8 @@ var RequestDetailShowComponent = function RequestDetailShowComponent(props) {
                 src: "".concat(_const__WEBPACK_IMPORTED_MODULE_0__.default.baseURL, "storage/task-image/").concat(requestInfo.image, ".jpg"),
                 alt: "",
                 style: {
-                  width: '50px',
-                  height: '50px'
+                  width: '60px',
+                  height: '60px'
                 }
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {

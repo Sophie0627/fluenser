@@ -198,32 +198,27 @@ class InboxComponent extends Component {
                             <div style={{height: containerHeight, overflow: 'auto'}}>
                                 {
                                     this.state.showInboxes.map((inbox, i) => {
+                                        console.log(inbox);
                                         const moment = require('moment-timezone');
-                                        let now = Date.now();
-                                        let created_at = new Date(inbox.accountInfo[0].created_at);
-                                        const differencs = Math.abs(now - created_at);
-                                        let time;
-                                        if(differencs < 1000*60*60) {
-                                            time = Math.floor((differencs / 1000 / 60)) + 'm';
-                                        } else if(1000 * 60 * 60 * 24 > differencs > 1000 * 60 * 60) {
-                                            time = Math.floor(differencs / 1000 / 60 / 60) + 'h';
-                                        } else if(1000 * 60 * 60 * 24 * 7 > differencs > 1000 * 60 * 60 * 24)
-                                            time = Math.floor(differencs / 1000 / 60 / 60 / 24) + 'd';
-                                        else if(1000 * 60 * 60 * 24 *7 < differencs)
-                                            time = Math.floor(differencs / 1000 / 60 /60 /24 /7) + 'w';
-                                        // const timezone = moment.tz.guess();
-                                        // created_at = moment.utc(created_at).tz(timezone).format();
-                                        // created_at = created_at.replace(/:|T|-/g, ',');
-                                        // let datetime = created_at.split(',');
-                                        // let time;
-                                        // if (datetime[3] >= 12) {
-                                        //     time = datetime[3] - 12 + ":" + datetime[4] + " PM";
-                                        // } else {
-                                        //     time = datetime[3] + ":" + datetime[4] + " AM";
-                                        // }
-                                        // const month = constant.month[parseInt(datetime[1])];
-                                        // const day = datetime[2];
-                                        // time = time + ', ' + month + ' ' + day;
+                                        let now = moment.utc(Date.now());
+                                        let created_at = moment.utc(inbox.inboxContent[0].created_at);
+                                        const difference = Math.abs(now - created_at);
+                                        console.log(difference);
+                                        let time = 0;
+                                        if(difference < (1000 * 60 * 60)) {
+                                            console.log('minutes');
+                                            time = Math.floor(difference / 1000 / 60) + ' minutes';
+                                        } else if(1000 * 60 * 60 * 24 > difference && difference > 1000 * 60 * 60) {
+                                            console.log('hours');
+                                            time = Math.floor(difference / 1000 / 60 / 60) + ' hours';
+                                        } else if(1000 * 60 * 60 * 24 * 7 > difference && difference > 1000 * 60 * 60 * 24){
+                                            console.log('hours');
+                                            time = Math.floor(difference / 1000 / 60 / 60 / 24) + ' days';
+                                        } else if(1000 * 60 * 60 * 24 *7 < difference) {
+                                            console.log('hours');
+                                            time = Math.floor(difference / 1000 / 60 /60 /24 /7) + ' weeks';
+                                        }
+                                        console.log(time + "time");
                                         return (
                                             <div key={i} className="w-11/12 mx-auto rounded px-2 relative">
                                                 <div className="w-full">
@@ -231,7 +226,7 @@ class InboxComponent extends Component {
                                                         <div className="float-left flex-shrink-0 rounded-full" style={{
                                                             width: '55px',
                                                             height: '55px',
-                                                            margin: '10px 0',
+                                                            margin: '5px 0',
                                                             padding: '2px',
                                                             marginLeft: '28px',
                                                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
@@ -244,7 +239,7 @@ class InboxComponent extends Component {
                                                             </div>
                                                         </div>
                                                         <a href="#" onClick={() => this.onInboxClick(inbox.id)}>
-                                                            <div style={{marginLeft: '75px', paddingTop: '3px'}}>
+                                                            <div style={{marginLeft: '100px', paddingTop: '3px'}}>
                                                                 <span className="text-md md:text-lg font-medium text-gray-700">
                                                                   {inbox.accountInfo[0].name}
                                                                 </span>
@@ -255,7 +250,7 @@ class InboxComponent extends Component {
                                                             </div>
                                                         </a>
                                                         <div style={{
-                                                            marginLeft: '75px',
+                                                            marginLeft: '100px',
                                                             height: '40px',
                                                             paddingTop: '3px',
                                                             paddingBottom: '10px',

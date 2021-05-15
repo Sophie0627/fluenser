@@ -96,19 +96,19 @@
                         @endif
                       @endfor
                     </span>
-                  <span class="ml-1 text-gray-700" style="line-height: 20px;">({{ $accountInfo->reviews }})</span>
+                  <span class="ml-1 text-gray-700" style="line-height: 20px;">({{ ($accountInfo->reviews != 0) ? $accountInfo->reviews : __("") }})</span>
                   </div>
                   <p class="text-sm md:text-md text-gray-700 mt-1" style="font-weight: 400;"><i style="color: #119dab" class="fas fa-map-marker-alt"></i> {{ $accountInfo->state.', '.$accountInfo->country }}</p>
                 </div>
                 <div class="float-right w-3/12 pr-2 pt-3" style="font-family: 'Poppins', sans-serif;">
                   @if(count($categories) > 0)
                   <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background:#{{ $categories[0]->back_color }}">
-                    <p class="text-sm text-center" style="color: #{{ $categories[0]->text_color }}; font-weight:500;">{{ $categories[0]->category_name }}</p>
+                    <p class="text-sm text-center" style="color: {{ __("#") . $categories[0]->text_color }}; font-weight:500;">{{ $categories[0]->category_name }}</p>
                   </div>
                 @endif
                     @if(count($categories) > 1)
-                  <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background: #{{ $categories[1]->back_color }}">
-                    <p class="text-sm text-center" style="color: #{{ $categories[1]->text_color }}; font-weight:500;">{{ $categories[1]->category_name }}</p>
+                  <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background: {{__("#") . $categories[1]->back_color }}">
+                    <p class="text-sm text-center" style="color: {{__("#") . $categories[1]->text_color }}; font-weight:500;">{{ $categories[1]->category_name }}</p>
                   </div>
                   @endif
                 </div>
@@ -189,11 +189,11 @@
                     <div class="carousel-inner">
                       @if(count($partnerships) > 0)
                       <div class="carousel-item active">
-                        <img src={{ url('/storage/partnership-image/'.$partnerships[0]->partnership_img).'.jpg' }} alt={{ $partnerships[0]->partnership_img }} class="w-9/12 mx-auto rounded-xl">
+                        <img class="w-9/12 mx-auto rounded-xl" src={{ url('/storage/partnership-image/'.$partnerships[0]->partnership_img).'.jpg' }} alt={{ $partnerships[0]->partnership_img }} >
                       </div>
                       @for ($i = 1; $i < count($partnerships); $i++)
                       <div class="carousel-item">
-                        <img src={{ url('/storage/partnership-image/'.$partnerships[$i]->partnership_img).'.jpg' }} alt={{ $partnerships[$i]->partnership_img }} class="w-9/12 mx-auto rounded-xl">
+                        <img class="w-9/12 mx-auto rounded-xl" src={{ url('/storage/partnership-image/'.$partnerships[$i]->partnership_img).'.jpg' }} alt={{ $partnerships[$i]->partnership_img }}>
                       </div>
                       @endfor
                       @else
@@ -255,10 +255,10 @@
       <div class="w-full md:max-w-7xl mx-auto py-3" style="border-top: 1px solid lightgray">
         <div class="w-8/12 mx-auto">
             @if ($accountInfo->id == Auth::user()->id)
-                <a href={{ route('editProfile', ['username' => Auth::user()->username]) }} class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Edit</a>
+                <a href="{{ route('editProfile', ['username' => Auth::user()->username]) }}" class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Edit</a>
             @else
                 @if ($accountInfo->accountType == 'influencer')
-                <a href={{ route('collaborate', ['user_id' => $accountInfo->id]) }} class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Collaborate</a>
+                <a href="{{ route('collaborate', ['user_id' => $accountInfo->id]) }}" class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Collaborate</a>
                 @else
                 <a onclick="$('div#modal').show();" class="focus:text-gray-300 block w-full py-2 text-center text-white font-bold text-lg md:text-xl rounded-lg" id="sendRequest" style="background: #0ac2c8; font-family:'Poppins', sans-serif; font-weight:500;">Request</a>
                 @endif
