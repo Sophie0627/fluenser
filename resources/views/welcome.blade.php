@@ -183,8 +183,8 @@
                           </ul>
                           <!-- The slideshow -->
                           @if(count($partnerships) > 0)
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
+                          <div class="carousel-inner rounded-xl">
+                            <div class="carousel-item active rounded-xl">
                               <img src={{ url('/storage/partnership-image/'.$partnerships[0]->partnership_img).'.jpg' }} alt={{ $partnerships[0]->partnership_img }} class="w-full rounded-xl">
                             </div>
 
