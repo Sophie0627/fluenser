@@ -219,7 +219,7 @@
                 <p class="text-sm text-center mx-2" style="font-family: 'Poppins', sans-serif; font-weight:400">With secure payments and thousands of reviewed  influencers to choose from, Fluenser is the simplest and safest way to collaborate with influencers online.</p>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Sign up, no hidden costs and completely free to user.</div>
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Sign up, no hidden costs and completely free to use.</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-sign-in-alt"></i></div>
                 </div>
 
@@ -239,7 +239,7 @@
                 </div>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Collaborate completed, time to leave a review!</div>
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Collaboration completed, time to leave a review!</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-star"></i></div>
                 </div>
             </div>
