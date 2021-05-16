@@ -186,16 +186,16 @@
                             <div class="carousel-item active rounded-xl">
                               <img src="{{ asset('img/slide1.png') }}" alt="slide1" class="w-full rounded-xl">
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item rounded-xl">
                               <img src='{{ asset('img/slide2.png') }}' alt="slide2" class="w-full rounded-xl">
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item rounded-xl">
                               <img src='{{ asset('img/slide3.png') }}' alt="slide3" class="w-full rounded-xl">
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item rounded-xl">
                               <img src='{{ asset('img/slide4.png') }}' alt="slide4" class="w-full rounded-xl">
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item rounded-xl">
                               <img src='{{ asset('img/slide5.png') }}' alt="slide5" class="w-full rounded-xl">
                             </div>
                           </div>
