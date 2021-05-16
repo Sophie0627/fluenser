@@ -151,7 +151,7 @@ const RequestComponent =(props) => {
                         <div className="float-left flex-shrink-0 rounded-full" style={{
                             width: '55px',
                             height: '55px',
-                            margin: '10px 0',
+                            margin: '5px 0',
                             padding: '2px',
                             marginLeft: '28px',
                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
@@ -160,7 +160,7 @@ const RequestComponent =(props) => {
                             <img src={ constant.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg' } alt={ request.accountInfo[0].avatar } className="rounded-full" style={{width:'100%'}}/>
                             </div>
                         </div>
-                      <div style={{marginLeft:'70px'}}>
+                      <div style={{marginLeft:'100px'}}>
                         <p className="text-md md:text-lg font-bold relative">
                           { request.accountInfo[0].name }
                           {
@@ -172,12 +172,12 @@ const RequestComponent =(props) => {
                           }
                         </p>
                       </div>
-                      <div style={{margin:'0 0 0 70px'}}>
+                      <div style={{margin:'0 0 0 100px'}}>
                         <p className="text-xs md:text-sm text-gray-500 overflow-hidden" style={{height:'17px'}}>
                           { request.requestContent.content }
                         </p>
                       </div>
-                      <div style={{marginLeft:'70px'}}>
+                      <div style={{marginLeft:'100px'}}>
                         {
                           (request.requestContent.gift == 1)
                           ?

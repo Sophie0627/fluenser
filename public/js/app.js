@@ -2260,8 +2260,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  // baseURL: 'http://localhost/api/'
-  baseURL: 'https://fluee123.host/api/'
+  baseURL: 'http://localhost/api/' // baseURL: 'https://fluee123.host/api/'
+
 }));
 
 /***/ }),
@@ -2278,8 +2278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var constant = {
-  // baseURL: 'http://localhost/',
-  baseURL: 'https://fluee123.host/',
+  baseURL: 'http://localhost/',
+  // baseURL: 'https://fluee123.host/',
   month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nev', 'Dec'],
   request_status: ['posted', 'accepted', 'completed', 'reviewed', 'disputed']
 };
@@ -3638,7 +3638,7 @@ var RequestComponent = function RequestComponent(props) {
                   style: {
                     width: '55px',
                     height: '55px',
-                    margin: '10px 0',
+                    margin: '5px 0',
                     padding: '2px',
                     marginLeft: '28px',
                     background: 'linear-gradient(to right, #06ebbe, #1277d3)'
@@ -3659,7 +3659,7 @@ var RequestComponent = function RequestComponent(props) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
-                    marginLeft: '70px'
+                    marginLeft: '100px'
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
                     className: "text-md md:text-lg font-bold relative",
@@ -3674,7 +3674,7 @@ var RequestComponent = function RequestComponent(props) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
-                    margin: '0 0 0 70px'
+                    margin: '0 0 0 100px'
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
                     className: "text-xs md:text-sm text-gray-500 overflow-hidden",
@@ -3685,7 +3685,7 @@ var RequestComponent = function RequestComponent(props) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
-                    marginLeft: '70px'
+                    marginLeft: '100px'
                   },
                   children: request.requestContent.gift == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
                     className: "text-xs md:text-sm text-gray-500",
