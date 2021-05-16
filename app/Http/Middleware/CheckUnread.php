@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\UserInbox;
 use App\Models\UserRequest;
 use App\Models\UserTask;
+use App\Models\User;
 
 class CheckUnread
 {
@@ -31,6 +32,9 @@ class CheckUnread
     
             $unreadTask = UserTask::where('user_id', '=', Auth::user()->id)                ->get();
             $unread->task = count($unreadTask);
+            $user = User::find(Auth::user()->id);
+            $user->loggedIn = true;
+            $user->save();
         } else {
             $unread = UserInbox::where('user_id', '=', 1)
                     ->get();

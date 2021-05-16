@@ -2260,8 +2260,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: 'http://localhost/api/' // baseURL: 'https://fluee123.host/api/'
-
+  // baseURL: 'http://localhost/api/'
+  baseURL: 'https://fluee123.host/api/'
 }));
 
 /***/ }),
@@ -2278,8 +2278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var constant = {
-  baseURL: 'http://localhost/',
-  // baseURL: 'https://fluee123.host/',
+  // baseURL: 'http://localhost/',
+  baseURL: 'https://fluee123.host/',
   month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nev', 'Dec'],
   request_status: ['posted', 'accepted', 'completed', 'reviewed', 'disputed']
 };
@@ -6118,7 +6118,7 @@ var RequestDetailShowComponent = function RequestDetailShowComponent(props) {
       }), requestInfo.gift == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
         className: "text-gray-500 text-xs md:text-sm ml-2",
         children: ["Offer: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-          className: "text-gray-600 font-bold",
+          className: "text-gray-600 font-bold text-sm",
           children: "Gift"
         })]
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {

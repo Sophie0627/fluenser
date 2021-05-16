@@ -18,7 +18,7 @@ const RequestDetailShowComponent = (props) => {
                 {
                     (requestInfo.gift == 1) ?
                         <p className="text-gray-500 text-xs md:text-sm ml-2">
-                            Offer: <span className="text-gray-600 font-bold">Gift</span>
+                            Offer: <span className="text-gray-600 font-bold text-sm">Gift</span>
                         </p>
                         :
                         <p className="text-gray-500 text-xs md:text-sm ml-2">

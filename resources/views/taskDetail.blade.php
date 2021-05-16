@@ -40,8 +40,9 @@
                   <p class="text-md md:text-lg font-bold">Gifted</p>
                   <p class="text-xs md:text-sm">in progress</p>
                 @else
-                  <p class="text-sm font-bold">Completed</p>
-                @endif
+                <p class="text-md md:text-lg font-bold">Gifted</p>
+                <p class="text-xs md:text-sm">Completed</p>
+              @endif
               </div>
             </div>
           @else

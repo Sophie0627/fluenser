@@ -96,7 +96,7 @@
                         @endif
                       @endfor
                     </span>
-                  <span class="ml-1 text-gray-700" style="line-height: 20px;">({{ ($accountInfo->reviews != 0) ? $accountInfo->reviews : __("") }})</span>
+                  <span class="ml-1 text-gray-700" style="line-height: 20px;">{{ ($accountInfo->reviews != 0) ? ($accountInfo->reviews) : __("") }}</span>
                   </div>
                   <p class="text-sm md:text-md text-gray-700 mt-1" style="font-weight: 400;"><i style="color: #119dab" class="fas fa-map-marker-alt"></i> {{ $accountInfo->state.', '.$accountInfo->country }}</p>
                 </div>
