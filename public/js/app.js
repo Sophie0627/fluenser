@@ -2260,8 +2260,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: 'http://localhost/api/' // baseURL: 'https://fluee123.host/api/'
-
+  // baseURL: 'http://localhost/api/'
+  baseURL: 'https://fluee123.host/api/'
 }));
 
 /***/ }),
@@ -2278,8 +2278,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var constant = {
-  baseURL: 'http://localhost/',
-  // baseURL: 'https://fluee123.host/',
+  // baseURL: 'http://localhost/',
+  baseURL: 'https://fluee123.host/',
   month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nev', 'Dec'],
   request_status: ['posted', 'accepted', 'completed', 'reviewed', 'disputed']
 };
