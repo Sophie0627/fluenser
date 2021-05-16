@@ -17,13 +17,8 @@ class WelcomeController extends Controller
             $influencerInfo = new InfluencerInfo();
             $influencerInfo = $influencerInfo->getFeaturedInfluencers();
 
-            $partnerships = Partnership::orderBy('created_at')
-                    ->take(4)
-                    ->get();
-
             return view('welcome', [
                 'featuredInfluencers' => $influencerInfo,
-                'partnerships' => $partnerships,
             ]);
         }
     }

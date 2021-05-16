@@ -177,24 +177,28 @@
                           <!-- Indicators -->
                           <ul class="carousel-indicators">
                             <li data-target="#partnerships" data-slide-to="0" class="active"></li>
-                            @for ($i = 1; $i < count($partnerships); $i++)
+                            @for ($i = 1; $i < 5; $i++)
                               <li data-target="#partnerships" data-slide-to={{ $i + 1 }}></li>
                             @endfor
                           </ul>
                           <!-- The slideshow -->
-                          @if(count($partnerships) > 0)
                           <div class="carousel-inner rounded-xl">
                             <div class="carousel-item active rounded-xl">
-                              <img src={{ url('/storage/partnership-image/'.$partnerships[0]->partnership_img).'.jpg' }} alt={{ $partnerships[0]->partnership_img }} class="w-full rounded-xl">
+                              <img src="{{ asset('img/slide1.png') }}" alt="slide1" class="w-full rounded-xl">
                             </div>
-
-                            @for ($i = 1; $i < count($partnerships); $i++)
                             <div class="carousel-item">
-                              <img src={{ url('/storage/partnership-image/'.$partnerships[$i]->partnership_img).'.jpg' }} alt={{ $partnerships[$i]->partnership_img }} class="w-full rounded-xl">
+                              <img src='{{ asset('img/slide2.png') }}' alt="slide2" class="w-full rounded-xl">
                             </div>
-                            @endfor
+                            <div class="carousel-item">
+                              <img src='{{ asset('img/slide3.png') }}' alt="slide3" class="w-full rounded-xl">
+                            </div>
+                            <div class="carousel-item">
+                              <img src='{{ asset('img/slide4.png') }}' alt="slide4" class="w-full rounded-xl">
+                            </div>
+                            <div class="carousel-item">
+                              <img src='{{ asset('img/slide5.png') }}' alt="slide5" class="w-full rounded-xl">
+                            </div>
                           </div>
-                          @endif
                         </div>
                       </div>
                     </div>
@@ -220,26 +224,22 @@
                 </div>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Discover thousands of verified
-                        influencers.</div>
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Discover thousands of verified influencers.</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-check"></i></div>
                 </div>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Directly message influencers with
-                        your proposal wether it`s gifted or paid promotion.</div>
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Directly message influencers with your proposal, wether it`s gifted or paid promotion.</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-comments"></i></div>
                 </div>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Your money is held securely by us
-                        until you approve the influencers work.</div>
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Your money is held securely by us until you approve the influencers work.</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-dollar-sign"></i></div>
                 </div>
 
                 <div class="w-full rounded-lg px-2 py-3 relative mt-3" style="box-shadow: 0 0 3px 3px #eee;" id="how-it-works">
-                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Collaborate completed, time to
-                        leave a review!</div>
+                    <div class="text-gray-500" style="margin-left: 45px;font-size:13px;">Collaborate completed, time to leave a review!</div>
                     <div class="absolute rounded-full" id="gradient-icon"><i class="fas fa-star"></i></div>
                 </div>
             </div>
