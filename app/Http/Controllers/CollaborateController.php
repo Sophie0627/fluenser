@@ -140,7 +140,7 @@ class CollaborateController extends Controller
         $accountInfo = $user->getAccountInfoByUserID($user_id);
 
         return view('review', [
-            'page' => 0,
+            'page' => 3,
             'unread' => $request->get('unread'),
             "accountInfo" => $accountInfo[0],
             'requestInfo' => $requestInfo[0],

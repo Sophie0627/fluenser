@@ -123,6 +123,7 @@ class HomeController extends Controller
     public function accountSetting(Request $request)
     {
         return view('accountSetting', [
+            'page' => 5,
             'unread' => $request->get('unread'),
         ]);
     }

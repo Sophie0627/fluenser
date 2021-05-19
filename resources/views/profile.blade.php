@@ -66,16 +66,16 @@
                   <img src={{ url('/storage/profile-image/'.$profile->round_img.'.jpg') }} alt={{ $profile->round_img }} class="rounded-full" style="border:3px solid white">
                 </div>
                 @if($accountInfo->loggedIn)
-                <div style="margin-left: 30%;" class="h-full text-green-500">
+                <div style="margin-left: 30%; display: flex; align-content: center;" class="h-full text-green-500">
                   <span><i class="fas fa-circle" style="font-size: 5px; line-height:2rem;"></i></span>
-                  <span class="leading-8 text-xs md:text-sm text-gray-500" style="line-height: 2rem;font-family: 'Poppins', sans-serif; font-weight: 500;">
+                  <span class="leading-8 text-xs md:text-sm text-gray-500" style="line-height: 2rem;font-family: 'Poppins', sans-serif; font-weight: 500;">&nbsp;&nbsp;
                     Active now
                   </span>
                 </div>
                 @else
-                <div style="margin-left: 30%;" class="h-full text-gray-500">
+                <div style="margin-left: 30%;display: flex; align-content: center;" class="h-full text-gray-500">
                   <span><i class="fas fa-circle" style="font-size: 5px; line-height:2rem;"></i></span>
-                  <span class="leading-8 text-xs md:text-sm" style="line-height: 2rem;" style="font-family: 'Poppins', sans-serif; font-weight: 500;">
+                  <span class="leading-8 text-xs md:text-sm" style="line-height: 2rem;" style="font-family: 'Poppins', sans-serif; font-weight: 500;">&nbsp;&nbsp;
                     last seen {{ $accountInfo->interval }} ago
                   </span>
                 </div>
@@ -96,37 +96,36 @@
                         @endif
                       @endfor
                     </span>
-                  <span class="ml-1 text-gray-700" style="line-height: 20px;">{{ ($accountInfo->reviews != 0) ? ($accountInfo->reviews) : __("") }}</span>
+                  <span class="text-sm ml-1 text-gray-700" style="line-height: 20px;"><span>(</span>{{ ($accountInfo->reviews != 0)  ? $accountInfo->reviews : __("") }}<span>)</span></span>
                   </div>
                   <p class="text-sm md:text-md text-gray-700 mt-1" style="font-weight: 400;"><i style="color: #119dab" class="fas fa-map-marker-alt"></i> {{ $accountInfo->state.', '.$accountInfo->country }}</p>
                 </div>
                 <div class="relative float-right w-3/12 pr-2 pt-3" style="font-family: 'Poppins', sans-serif;">
                   @if(count($categories) > 0)
                   <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background:#{{ $categories[0]->back_color }}">
-                    <p class="text-sm text-center" style="color: {{ __("#") . $categories[0]->text_color }}; font-weight:500;">{{ $categories[0]->category_name }}</p>
+                    <p class="text-sm text-center" style="color: {{ __('#') . $categories[0]->text_color }}; font-weight:500;">{{ $categories[0]->category_name }}</p>
                   </div>
                 @endif
                     @if(count($categories) > 1)
-                  <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background: {{__("#") . $categories[1]->back_color }}">
-                    <p class="text-sm text-center" style="color: {{__("#") . $categories[1]->text_color }}; font-weight:500;">{{ $categories[1]->category_name }}</p>
+                  <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background: {{__('#') . $categories[1]->back_color }}">
+                    <p class="text-sm text-center" style="color: {{__('#') . $categories[1]->text_color }}; font-weight:500;">{{ $categories[1]->category_name }}</p>
                   </div>
                   @endif
-                  <div id="social_links" class="w-3/5 float-right" style="position: absolute;
-                  bottom: -50%;right: 20px;transform: translateY(-10%);">
-                    <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
-                      <a href="{{ 'https://'.$profile->tiktok }}" class="text-center leading-10"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                    <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
-                      <a href="{{ 'https://'.$profile->youtube }}" class="text-center leading-10 text-red-700"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
-                      <a href="{{ 'https://'.$profile->instagram }}" class="text-center leading-10"><i class="fab fa-instagram" style="background:-webkit-linear-gradient(#792ec5, #c62e71, #da8a40);-webkit-background-clip: text;-webkit-text-fill-color: transparent;"></i></a>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
                 </div>
                 <div class="clearfix"></div>
               </div>
+            </div>
+            <div id="social_links" style="position: absolute; bottom: 43px;right: 43px; width:150px;">
+              <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
+                <a href="{{ 'https://'.$profile->tiktok }}" class="text-center leading-10"><i class="fab fa-tiktok"></i></a>
+              </div>
+              <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
+                <a href="{{ 'https://'.$profile->youtube }}" class="text-center leading-10 text-red-700"><i class="fab fa-youtube"></i></a>
+              </div>
+              <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
+                <a href="{{ 'https://'.$profile->instagram }}" class="text-center leading-10"><i class="fab fa-instagram" style="background:-webkit-linear-gradient(#792ec5, #c62e71, #da8a40);-webkit-background-clip: text;-webkit-text-fill-color: transparent;"></i></a>
+              </div>
+              <div class="clearfix"></div>
             </div>
           </div>
           <div class="h-8 rounded-t-2xl bg-white w-full absolute -bottom-1"></div>

@@ -14,6 +14,7 @@ class CreateSavedTable extends Migration
     public function up()
     {
         Schema::create('saved', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('user1_id');
             $table->unsignedBigInteger('user2_id');
             $table->timestamps();

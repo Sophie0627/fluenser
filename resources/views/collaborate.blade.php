@@ -10,7 +10,7 @@
     <div class="w-full md:max-w-7xl mx-auto sm:px-6 lg:px-8" id="collaborate" style="overflow: auto">
       <!-- Replace with your content -->
         <div class="bg-white w-11/12 mx-auto my-3 md:max-w-lg pb-20">
-          <div class="w-3/5 mx-auto rounded-full" style="background: linear-gradient(to right, #06ebbe, #1277d3); padding:10px;">
+          <div class="w-3/5 mx-auto rounded-full" style="background: linear-gradient(to right, #06ebbe, #1277d3); padding:6px;">
             <div class="w-full rounded-full bg-white px-1 py-1">
               <img src={{ url('/storage/profile-image/'.$influencerInfo->avatar.'.jpg') }} alt="$influencerInfo->avatar" class="w-full mx-auto rounded-full">
             </div>
@@ -73,7 +73,7 @@
                     How would you like to compensate the influencer?
                   </p>
                   <a class="payMethod active" id="money">
-                    <div class="payMethod float-left" style="width: 90px; height: 90px; border-radius:50%; background:lightgray; border: 1px solid lightgray; padding:15px">
+                    <div class="payMethod float-left" style="width: 90px; height: 90px; border-radius:50%; background:#eee; border: 1px solid lightgray; padding:15px">
                       <p class="text-3xl text-gray-500 text-center" style="line-height: 35px">
                           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="42" viewBox="0 0 25 42" style="margin: auto">
                               <defs>
@@ -93,7 +93,7 @@
                     </div>
                   </a>
                   <a class="payMethod" id="both">
-                    <div class="payMethod float-right mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:lightgray; border: 1px solid lightgray; padding:15px">
+                    <div class="payMethod float-right mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:#eee; border: 1px solid lightgray; padding:15px">
                       <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px">
                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37" height="45" viewBox="0 0 37 45" style="margin: auto">
                               <defs>
@@ -114,7 +114,7 @@
                     </div>
                   </a>
                   <a class="payMethod" id="gift">
-                    <div class="payMethod mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:lightgray; border: 1px solid lightgray; padding:15px">
+                    <div class="payMethod mx-auto" style="width: 90px; height: 90px; border-radius:50%; background:#eee; border: 1px solid lightgray; padding:15px">
                       <p class="text-3xl text-gray-500 text-center text-gray-500" style="line-height: 35px">
                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="43" viewBox="0 0 35 43" style="margin: auto">
                               <image width="35" height="43" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAArCAYAAADyijE0AAACeElEQVRYhc2Yv2sUQRTHP7eJCf5I/IFeLhchGA1pjI2dWKiVhUZrCzvBQlvxX9A/w8bmhERUEEHE3kIwltpoQESCEUI0/mLu3sjcvLfrbcjt3AeOY9/M2/nuvB/Dbq3VarFFbgIXgTFgFPgOrANPgbtbueWwsvyffcBLIAPuAw+BFaABXACuANeAM8DHfooZkYWfAZeisS/AMnAHuAd8AA4Aq+ouOZQV8wB4ZQiJuQqMA4+BU2o0hzJiTgDngP1qxOYy8FV8npszIjJlyecG8AL4kTtD8wS4rqw5lBFTB94qazHLEq5tF7MJ/FTWYtYLRyOsnFkAdgO/A9s3YAjYK71ll/LSuHBOyf95aQl/ZFZNHm4R+OU9YzGuFJeMG29KMzsofaVXHgEbsuio4TMDvPcXcZgm1fQOK/JU7ik+q1GbDXmITPwt6qEtFtMwHJAQDcuv1zzLIj+L6SIxxwwHpF+MS86sqVGbNTm3xgq68Fx4ESueUdM7LEr8XTXdBo6oGZrXwC1gB3BWmmZMM7zuNWcWpGe48+a0GrU5KTvyRrqxRdd68c7k5cx8ifB4XCm/U9aC9XpN4H6RW00u8ycqFtMIj4tQTF2aWpXsDKMRiylzVm0XhywxeZXUb/61k1DMXOUyOsxaYnppZP1gyhJTdSWpdUMxVfcYjymmrqZVgyrtkfjQqpBJX95ezLScJSkY8hXlxRxNJMRzOBSTquF5JkIxqSrJ02SAdqa9vheTqpI8XWJSh6krZ1I1PI/bjFomr6qpc8Y1vWYmPWaPGq4Wp2M2i9/qEtLemdQh8jQGScxA7UxbzHFlTsO8e711X7Y/BV+VUlADVv8C2aNRDUME918AAAAASUVORK5CYII="/>

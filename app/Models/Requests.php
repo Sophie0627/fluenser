@@ -22,7 +22,8 @@ class Requests extends Model
         $tasks = DB::table('requests')
                 ->where('requests.receive_id', '=', $user_id)
                 ->join('request_info', 'requests.id', '=', 'request_info.request_id')
-                ->orderBy('requests.updated_at', 'desc')
+                ->orderBy('request_info.updated_at', 'desc')
+                ->select('requests.send_id', 'requests.receive_id', 'request_info.*')
                 ->get();
         $user = new User();
         foreach ($tasks as $task) {
@@ -30,9 +31,9 @@ class Requests extends Model
             $users = $user->getAccountInfoByUserID($task->send_id);
             $task->name = $users[0]->name;
 
-            $created = date_create($task->created_at);
+            $updated = date_create($task->updated_at);
             $now = date_create(gmdate('Y-m-d h:i:sa'));
-            $interval = date_diff($created, $now);
+            $interval = date_diff($updated, $now);
             if($interval->format('%d') > 0)
                 $task->interval = $interval->format('%d day');
 
@@ -62,15 +63,16 @@ class Requests extends Model
         $tasks = DB::table('requests')
                 ->where('send_id', '=', $user_id)
                 ->join('request_info', 'requests.id', '=', 'request_info.request_id')
-                ->orderBy('requests.updated_at', 'desc')
+                ->orderBy('request_info.updated_at', 'desc')
+                ->select('requests.send_id', 'requests.receive_id', 'request_info.*')
                 ->get();
         $user = new User();
         foreach ($tasks as $task) {
             $users = $user->getAccountInfoByUserID($task->receive_id);
             $task->name = $users[0]->name;
-            $created = date_create($task->created_at);
+            $updated = date_create($task->updated_at);
             $now = date_create(gmdate('Y-m-d h:i:sa'));
-            $interval = date_diff($created, $now);
+            $interval = date_diff($updated, $now);
             if($interval->format('%d') > 0) $task->interval = $interval->format('%d day');
 
             if($interval->format('%d') == 0 && $interval->format('%h') > 0)

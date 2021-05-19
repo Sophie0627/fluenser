@@ -60,10 +60,10 @@
                 </div>
 
                 <div class="mt-3">
-                    <label for="password" class="text-sm ">{{ __('New Password') }}</label>
+                    <label for="newPassword" class="text-sm ">{{ __('New Password') }}</label>
 
                     <div class="relative">
-                        <input id="password" type="password" class="w-full rounded @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" style="padding: 12px 15px;">
+                        <input id="newPassword" type="password" class="w-full rounded @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" style="padding: 12px 15px;">
                         <a class="block absolute right-2" id="toggleNewPassword" style="top: 50%; transform:translateY(-50%);" onclick="toggleNewPassword()"><i class="fas fa-eye"></i></a>
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -102,7 +102,7 @@
 
     </div>
     <div class="w-full bg-red-100 text-center mt-5 py-2">
-      <a onclick="$('div#deleteConfirm').fadeIn(200);" class="text-red-700">Delete Account</a>
+      <a onclick="$('div#deleteConfirm').fadeIn(200);" class="text-red-700" style="cursor: pointer;">Delete Account</a>
       {{-- <a href="{{route('deleteAccount')}}" class="text-red-700">Delete Account</a> --}}
     </div>
 </div>

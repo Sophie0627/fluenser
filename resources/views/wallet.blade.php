@@ -184,7 +184,7 @@
                     <div class="w-full py-2 h-16" style="border-bottom: 1px solid #999">
                       <div class="flex justify-between">
                         <div>
-                          <p class="text-xs md:text-sm leading-6">{{ date($action->created_at) }}</p>
+                          <p class="text-xs md:text-sm leading-6">{{ date_create($action->created_at)->format('Y-m-d h:i') }}</p>
                         </div>
                         <div>
                           <p class="text-xs md:text-sm leading-10 py-2">
