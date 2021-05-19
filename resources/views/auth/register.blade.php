@@ -53,7 +53,7 @@
                       @enderror
                   </label>
                   <label class="block mb-8">
-                      <input id="email" type="email" class="h-10 form-input mt-2 block w-full @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="E-mail(will also be linked to stripe)" style="border:1px solid #999; padding:25px 15px;">
+                      <input id="email" type="email" class="h-10 form-input mt-2 block w-full @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="E-mail" style="border:1px solid #999; padding:25px 15px;">
                       @error('email')
                           <span class="invalid-feedback" role="alert">
                               <strong>{{ $message }}</strong>

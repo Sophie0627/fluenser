@@ -37,7 +37,8 @@ const RequestChat = (props) => {
 
     const divStyle = {
         float: (isUser) ? 'right' : 'left',
-        background: (isUser) ? 'transparent' : 'white',
+        background: (isUser) ? 'transparent' : 'linear-gradient(to right, #6553e7, #0ac9c4)',
+        paddingBottim: '1px'
     }
     const userDatetimeStyle = {
         left: 0
@@ -65,7 +66,7 @@ const RequestChat = (props) => {
                         <div>
                             <div className="relative" style={divStyle}>
                                 <div style={{border: (isUser) ? '1px solid #999' : 'none'}}>
-                                    <p className="text-sm px-4 py-2 text-gray-700">
+                                    <p className="text-sm px-4 py-2 text-gray-700 bg-white">
                                         {chat.content}
                                     </p>
                                 </div>

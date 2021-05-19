@@ -35,14 +35,30 @@ class ProfileController extends Controller
             $updated = date_create($accountInfo[0]->updated_at);
             $now = date_create(date('Y-m-d h:i:sa'));
             $interval = date_diff($updated, $now);
-            if($interval->format('%m') > 0)
-                $accountInfo[0]->interval = $interval->format('%m month');
-            if($interval->format('%m') == 0 && $interval->format('%h') > 0)
-                $accountInfo[0]->interval = $interval->format("%h hours");
-            if($interval->format('%h') == 0 && $interval->format('%m') == 0 && $interval->format('%i') > 0)
-                $accountInfo[0]->interval = $interval->format('%i minutes');
-            if($interval->format('%h') == 0 && $interval->format('%m') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0)
-                $accountInfo[0]->interval = $interval->format('%sa seconds');
+            if($interval->format('%m') > 0){
+                if($interval->format('%m') == '1')
+                    $accountInfo[0]->interval = $interval->format('%m month');
+                else
+                    $accountInfo[0]->interval = $interval->format('%m months');
+            }
+            if($interval->format('%m') == 0 && $interval->format('%h') > 0){
+                if($interval->format('$h') == '1')
+                    $accountInfo[0]->interval = $interval->format("%h hour");
+                else
+                    $accountInfo[0]->interval = $interval->format("%h hours");
+            }
+            if($interval->format('%h') == 0 && $interval->format('%m') == 0 && $interval->format('%i') > 0){
+                if($interval->format('%i') == '1')
+                    $accountInfo[0]->interval = $interval->format('%i minute');
+                else
+                    $accountInfo[0]->interval = $interval->format('%i minutes');
+                }
+            if($interval->format('%h') == 0 && $interval->format('%m') == 0 && $interval->format('%i') == 0 && $interval->format("%sa") > 0) {
+                if($interval->format('%m') == '1')
+                    $accountInfo[0]->interval = $interval->format('%sa second');
+                else
+                    $accountInfo[0]->interval = $interval->format('%sa seconds');
+            }
         } else {
             $accountInfo[0]->interval = '0';
         }

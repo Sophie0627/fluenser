@@ -100,7 +100,7 @@
                   </div>
                   <p class="text-sm md:text-md text-gray-700 mt-1" style="font-weight: 400;"><i style="color: #119dab" class="fas fa-map-marker-alt"></i> {{ $accountInfo->state.', '.$accountInfo->country }}</p>
                 </div>
-                <div class="float-right w-3/12 pr-2 pt-3" style="font-family: 'Poppins', sans-serif;">
+                <div class="relative float-right w-3/12 pr-2 pt-3" style="font-family: 'Poppins', sans-serif;">
                   @if(count($categories) > 0)
                   <div class="mb-2 px-1 py-1 rounded-lg w-full" style="background:#{{ $categories[0]->back_color }}">
                     <p class="text-sm text-center" style="color: {{ __("#") . $categories[0]->text_color }}; font-weight:500;">{{ $categories[0]->category_name }}</p>
@@ -111,18 +111,19 @@
                     <p class="text-sm text-center" style="color: {{__("#") . $categories[1]->text_color }}; font-weight:500;">{{ $categories[1]->category_name }}</p>
                   </div>
                   @endif
-                </div>
-                <div id="social_links" class="w-3/5 float-right">
-                  <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
-                    <a href="{{ 'https://'.$profile->tiktok }}" class="text-center leading-10"><i class="fab fa-tiktok"></i></a>
+                  <div id="social_links" class="w-3/5 float-right" style="position: absolute;
+                  bottom: -50%;right: 20px;transform: translateY(-10%);">
+                    <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
+                      <a href="{{ 'https://'.$profile->tiktok }}" class="text-center leading-10"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
+                      <a href="{{ 'https://'.$profile->youtube }}" class="text-center leading-10 text-red-700"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
+                      <a href="{{ 'https://'.$profile->instagram }}" class="text-center leading-10"><i class="fab fa-instagram" style="background:-webkit-linear-gradient(#792ec5, #c62e71, #da8a40);-webkit-background-clip: text;-webkit-text-fill-color: transparent;"></i></a>
+                    </div>
+                    <div class="clearfix"></div>
                   </div>
-                  <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
-                    <a href="{{ 'https://'.$profile->youtube }}" class="text-center leading-10 text-red-700"><i class="fab fa-youtube"></i></a>
-                  </div>
-                  <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
-                    <a href="{{ 'https://'.$profile->instagram }}" class="text-center leading-10"><i class="fab fa-instagram" style="background:-webkit-linear-gradient(#792ec5, #c62e71, #da8a40);-webkit-background-clip: text;-webkit-text-fill-color: transparent;"></i></a>
-                  </div>
-                  <div class="clearfix"></div>
                 </div>
                 <div class="clearfix"></div>
               </div>

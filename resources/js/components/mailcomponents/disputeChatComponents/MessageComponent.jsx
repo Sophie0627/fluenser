@@ -34,7 +34,8 @@ const MessageComponent = (props) => {
 
     const divStyle = {
         float: (chat.send_id == userID) ? 'right' : 'left',
-        background: (chat.send_id == userID) ? 'transparent' : 'white',
+        background: (chat.send_id == userID) ? 'transparent' : 'linear-gradient(to right, #6553e7, #0ac9c4)',
+        paddingBottom: '1px'
     }
     const userDatetimeStyle = {
         left: 0
@@ -61,7 +62,7 @@ const MessageComponent = (props) => {
                         <div>
                             <div className="relative" style={divStyle}>
                                 <div style={{border: (chat.send_id == userID) ? '1px solid #999' : 'none'}}>
-                                    <p className="text-sm px-4 py-2 text-gray-700">
+                                    <p className="text-sm px-4 py-2 text-gray-700 bg-white">
                                         {chat.content}
                                     </p>
                                 </div>
