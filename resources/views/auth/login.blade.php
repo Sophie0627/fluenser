@@ -1,12 +1,32 @@
-@extends('layouts.app')
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@section('content')
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- bootstarp -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+  </head>
+<body>
 <main>
     <div class="max-full md:max-w-xl mx-auto py-6 sm:px-6 lg:px-8 mt-20">
     <div class="w-full">
         <a href="{{route('welcome')}}" class="block mx-auto mb-10" style="max-width: 150px;">
-            <img class="w-full" src="{{ asset('img/logo.jpg') }}" alt="logo">
+            <img class="w-full" width="150" height="45" src="{{ asset('img/logo.jpg') }}" alt="logo">
         </a>
     </div>
         <div class="w-11/12 mx-auto bg-gray-100 rounded-2xl py-3" style="font-family: 'Poppins', sans-serif;">
@@ -65,4 +85,4 @@
         </div>
     </div>
 </main>
-@endsection
+</body>
