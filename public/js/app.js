@@ -2592,7 +2592,7 @@ var ChatComponent = /*#__PURE__*/function (_React$Component) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
             src: "".concat(_const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL, "img/waiting.gif"),
             alt: "waiting",
-            className: "mx-auto"
+            className: "mx-auto w-1/2"
           })
         });
       } else {
@@ -2878,7 +2878,7 @@ var DisputeChatComponent = /*#__PURE__*/function (_Component) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
             src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'img/waiting.gif',
             alt: "waiting",
-            className: "mx-auto"
+            className: "mx-auto w-1/2"
           })
         });
       } else {
@@ -3144,7 +3144,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'img/waiting.gif',
             alt: "waiting",
-            className: "mx-auto"
+            className: "mx-auto w-1/2"
           })
         });
       } else {
@@ -3311,7 +3311,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                             height: '55px',
                             margin: '5px 0',
                             padding: '2px',
-                            marginLeft: '28px',
+                            marginLeft: '5px',
                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
                           },
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3335,7 +3335,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                           },
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                             style: {
-                              marginLeft: '100px',
+                              marginLeft: '75px',
                               paddingTop: '3px'
                             },
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
@@ -3351,7 +3351,7 @@ var InboxComponent = /*#__PURE__*/function (_Component) {
                           })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                           style: {
-                            marginLeft: '100px',
+                            marginLeft: '75px',
                             height: '40px',
                             paddingTop: '3px',
                             paddingBottom: '10px',
@@ -3580,7 +3580,7 @@ var RequestComponent = function RequestComponent(props) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
         src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'img/waiting.gif',
         alt: "waiting",
-        className: "mx-auto"
+        className: "mx-auto w-1/2"
       })
     });
   } else {
@@ -3636,11 +3636,11 @@ var RequestComponent = function RequestComponent(props) {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "float-left flex-shrink-0 rounded-full",
                   style: {
-                    width: '55px',
-                    height: '55px',
+                    width: '60px',
+                    height: '60px',
                     margin: '5px 0',
                     padding: '2px',
-                    marginLeft: '28px',
+                    marginLeft: '5px',
                     background: 'linear-gradient(to right, #06ebbe, #1277d3)'
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -3659,7 +3659,7 @@ var RequestComponent = function RequestComponent(props) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
-                    marginLeft: '100px'
+                    marginLeft: '75px'
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
                     className: "text-md md:text-lg font-bold relative",
@@ -3674,7 +3674,7 @@ var RequestComponent = function RequestComponent(props) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
-                    margin: '0 0 0 100px'
+                    margin: '0 0 0 75px'
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
                     className: "text-xs md:text-sm text-gray-500 overflow-hidden",
@@ -3685,7 +3685,7 @@ var RequestComponent = function RequestComponent(props) {
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   style: {
-                    marginLeft: '100px'
+                    marginLeft: '75px'
                   },
                   children: request.requestContent.gift == 1 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
                     className: "text-xs md:text-sm text-gray-500",
@@ -4016,7 +4016,7 @@ var RequestDetailComponent = /*#__PURE__*/function (_React$Component) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
             src: _const__WEBPACK_IMPORTED_MODULE_2__.default.baseURL + 'img/waiting.gif',
             alt: "waiting",
-            className: "mx-auto"
+            className: "mx-auto w-1/2"
           })
         });
       } else {
@@ -5742,9 +5742,8 @@ var RequestButton = function RequestButton(props) {
       console.log(res.data);
 
       if (res.status == 200) {
-        if (res.data.data == 'success') {
-          history.push('/collaboration/accepted');
-          window.location.reload();
+        if (res.data.data == 'success') {// history.push('/collaboration/accepted');
+          // window.location.reload();
         }
 
         if (res.data.data == 'not enough balance') {
@@ -6238,11 +6237,11 @@ var RequestDetailTopComponent = function RequestDetailTopComponent(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "float-left flex-shrink-0 rounded-full",
       style: {
-        width: '50px',
-        height: '50px',
+        width: '55px',
+        height: '55px',
         margin: '10px 0',
         padding: '2px',
-        marginLeft: '28px',
+        marginLeft: '14px',
         background: 'linear-gradient(to right, #06ebbe, #1277d3)'
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {

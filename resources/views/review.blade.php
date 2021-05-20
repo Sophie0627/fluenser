@@ -11,9 +11,13 @@
     <p class="text-sm md:text-md text-gray-700 ml-3 md:ml-10 mt-3">
       {{ __("Let everyone know how working with " . $accountInfo->name . ' was') }}
     </p>
-    <div class="w-10/12 mx-auto h-14 my-3">
+    <div class="w-11/12 mx-auto h-14 my-3">
       <div class="w-14 float-left">
-        <img class="rounded-full" src={{ url('storage/profile-image/'.$accountInfo->avatar.'.jpg') }} alt={{ $accountInfo->avatar }}>
+        <div class="rounded-full px-1 py-1" style="background: linear-gradient(to right, #15ecc2, #1278d3)">
+          <div class="rounded-full w-full bg-white" style="padding: 1.5px;">
+            <img class="rounded-full w-full" src={{ url('storage/profile-image/'.$accountInfo->avatar.'.jpg') }} alt={{ $accountInfo->avatar }}>
+          </div>
+        </div>
       </div>
       <div class="py-2 ml-16">
         <p class="text-md md:text-lg font-bold leading-5">
@@ -134,14 +138,14 @@
 </main>
 
 <div id="reviewConfirm" class="h-screen w-screen bg-black bg-opacity-70 fixed top-0 z-50 hidden">
-  <div class="w-11/12 h-48 bg-white absolute rounded-xl" style="top:50%; margin-top:-6rem; left:50%; margin-left:-45.83333%;" id="modalBody">
+  <div class="w-11/12 h-36 bg-white absolute rounded-xl" style="top:50%; margin-top:-6rem; left:50%; margin-left:-45.83333%;" id="modalBody">
     <div class="w-8/12 mx-auto h-26 mt-4">
       <p class="text-center text-md md:text-lg text-gray-700 mt-5 mb-5">Review submitted</p>
     </div>
     <div class="w-full h-16" id="confirmBtn">
       <div class="w-full h-full">
         <div class="w-full">
-          <button class="w-full h-full block mx-auto py-3 rounded-br-lg text-white font-bold text-md md:text-lg" style="background:rgb(88,183,189)" onclick="location.href = '{{ route('home') }}'">Close</button>
+          <button class="w-full h-full block mx-auto py-3 rounded-b-lg text-white font-bold text-md md:text-lg" style="background:rgb(88,183,189)" onclick="location.href = '{{ route('home') }}'">Close</button>
         </div>
       </div>
     </div>

@@ -21,13 +21,15 @@
         <hr class="my-3" />
         <div class="text-center">
           <div class="w-1/3 px-1 py-1 mx-auto rounded-full my-3" style="background: linear-gradient(to right, #15ecc2, #1278d3)">
-            <img class="w-full mx-auto rounded-full" src={{ url('/storage/profile-image/'.$accountInfo->avatar.'.jpg') }} alt={{$accountInfo->avatar}}>
+            <div class="w-full bg-white rounded-full" style="padding: 2px;">
+              <img class="w-full mx-auto rounded-full" src="{{ url('/storage/profile-image/'.$accountInfo->avatar.'.jpg') }}" alt={{$accountInfo->avatar}}>              
+            </div>
           </div>
           <div class="mt-3 mb-4">
             <p class="text-md md:text-lg font-bold">{{$accountInfo->name}}</p>
             <p class="text-xs md:text-sm">{{'@' . $accountInfo->username}}</p>
           </div>
-          <a href={{ route('inbox') }} class="px-4 py-2 rounded-md border border-gray-500 text-sm md:text-md" onclick="sessionStorage.setItem('inbox_id', '{{ $inbox_id }}');">Chat</a>
+          <a href="{{ route('inbox') }}" class="px-4 py-2 rounded-md border border-gray-500 text-sm md:text-md" onclick="sessionStorage.setItem('inbox_id', '{{ $inbox_id }}');">Chat</a>
         </div>
         <hr class="my-4">
         <div class="mt-4 mb-3 text-center">
@@ -132,7 +134,7 @@
     function onReleaseClick(item) {
       if(item == 'releaseConfirm') {
         $("div#confirmModal #modalBody").html('');
-        var element = $("<img src={{asset('img/loading.gif')}} class='mx-auto' />");
+        var element = $("<img src={{asset('img/loading.gif')}} class='mx-auto w-32 pt-8'/>");
         $("div#confirmModal #modalBody").append(element);
 
         const headers ={
@@ -159,7 +161,7 @@
         });
       } else {
         $("div#giftConfirmModal #modalBody").html('');
-        var element = $("<img src={{asset('img/loading.gif')}} class='mx-auto' />");
+        var element = $("<img src={{asset('img/loading.gif')}} class='mx-auto w-32 pt-8'/>");
         $("div#giftConfirmModal #modalBody").append(element);
 
         const headers ={

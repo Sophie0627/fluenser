@@ -44,7 +44,6 @@ class CollaborateController extends Controller
         $rule = [
             'title' => 'required|max:255',
             'detail' => 'required',
-            'price' => 'required',
         ];
 
         $message = [

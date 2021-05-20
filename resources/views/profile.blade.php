@@ -115,7 +115,7 @@
                 <div class="clearfix"></div>
               </div>
             </div>
-            <div id="social_links" style="position: absolute; bottom: 43px;right: 43px; width:150px;">
+            <div id="social_links" style="position: absolute; bottom: 43px;right: 10%; width:150px;">
               <div class="w-10 h-10 rounded-full float-right mx-1 bg-white text-center" style="box-shadow: 0 0  8px 0 #999">
                 <a href="{{ 'https://'.$profile->tiktok }}" class="text-center leading-10"><i class="fab fa-tiktok"></i></a>
               </div>

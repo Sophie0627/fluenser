@@ -139,7 +139,7 @@ class DisputeChatComponent extends Component {
     if(this.state.isWaiting) {
       return (
         <div className="max-w-sm mx-auto py-10 text-center">
-          <img src={constant.baseURL + 'img/waiting.gif'} alt="waiting" className="mx-auto"/>
+          <img src={constant.baseURL + 'img/waiting.gif'} alt="waiting" className="mx-auto w-1/2"/>
         </div>
       )
     } else {

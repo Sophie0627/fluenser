@@ -504,6 +504,17 @@ class PaymentController extends Controller
         ]);
 
         $requestChats = RequestChat::where('request_id', '=', $request_id)->get();
+        $contact_id = ($user1_id == Auth::user()->id) ? $user_id : $user1_id;
+        if(count($requestChats) == 0) {
+          $chatInfo = new InboxInfo;
+          $chatInfo->inbox_id = $chat->id;
+          $chatInfo->send_id = Auth::user()->id;
+          $chatInfo->receive_id = $contact_id;
+          $chatInfo->content = "Hello";
+          $chatInfo->upload = 'none';
+          $chatInfo->save();
+        }
+        
         foreach ($requestChats as $requestChat) {
           $chatInfo = new InboxInfo;
           $chatInfo->inbox_id = $chat->id;

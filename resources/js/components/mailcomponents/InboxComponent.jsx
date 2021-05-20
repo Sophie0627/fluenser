@@ -126,7 +126,7 @@ class InboxComponent extends Component {
         if (this.state.isWaiting) {
             return (
                 <div className="max-w-sm mx-auto py-10 text-center">
-                    <img src={constant.baseURL + 'img/waiting.gif'} alt="waiting" className="mx-auto"/>
+                    <img src={constant.baseURL + 'img/waiting.gif'} alt="waiting" className="mx-auto w-1/2"/>
                 </div>
             )
         } else {
@@ -228,7 +228,7 @@ class InboxComponent extends Component {
                                                             height: '55px',
                                                             margin: '5px 0',
                                                             padding: '2px',
-                                                            marginLeft: '28px',
+                                                            marginLeft: '5px',
                                                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
                                                         }}>
                                                             <div className="w-full bg-white rounded-full" style={{padding: '2px'}}>
@@ -239,7 +239,7 @@ class InboxComponent extends Component {
                                                             </div>
                                                         </div>
                                                         <a href="#" onClick={() => this.onInboxClick(inbox.id)}>
-                                                            <div style={{marginLeft: '100px', paddingTop: '3px'}}>
+                                                            <div style={{marginLeft: '75px', paddingTop: '3px'}}>
                                                                 <span className="text-md md:text-lg font-medium text-gray-700">
                                                                   {inbox.accountInfo[0].name}
                                                                 </span>
@@ -250,7 +250,7 @@ class InboxComponent extends Component {
                                                             </div>
                                                         </a>
                                                         <div style={{
-                                                            marginLeft: '100px',
+                                                            marginLeft: '75px',
                                                             height: '40px',
                                                             paddingTop: '3px',
                                                             paddingBottom: '10px',

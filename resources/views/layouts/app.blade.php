@@ -275,14 +275,14 @@
 <div id="uploadModal" class="h-screen w-screen bg-black bg-opacity-70 fixed top-0 z-50 hidden">
     <div class="w-11/12 h-48 bg-white absolute rounded-xl"
          style="top:50%; margin-top:-6rem; left:50%; margin-left:-45.83333%;" id="modalBody">
-        <img src="{{ asset('img/uploading.gif') }}" alt="uploading" class="w-1/2 mx-auto">
+        <img src="{{ asset('img/uploading.gif') }}" alt="uploading" class="w-48 mx-auto">
     </div>
 </div>
 
 <div id="deleteModal" class="h-screen w-screen bg-black bg-opacity-70 fixed top-0 z-50 hidden">
     <div class="w-11/12 h-48 bg-white absolute rounded-xl"
          style="top:50%; margin-top:-6rem; left:50%; margin-left:-45.83333%;" id="modalBody">
-        <img src="{{ asset('img/deleting.gif') }}" alt="uploading" class="w-1/2 mx-auto">
+        <img src="{{ asset('img/deleting.gif') }}" alt="deleting" class="w-48 mx-auto">
     </div>
 </div>
 
@@ -305,7 +305,7 @@
                     @if (isset($requests))
                         <a class="text-center w-full h-full block mx-auto px-4 rounded-br-lg text-white font-bold text-md md:text-lg"
                            style="background:rgb(88,183,189); line-height:60px;"
-                           href="{{route('leaveReview', ['request_id' => $requests->id])}}">Leave a Review</a>
+                           href="{{route('leaveReview', ['request_id' => $requests->request_id])}}">Leave a Review</a>
                     @endif
                 </div>
             </div>
@@ -468,6 +468,7 @@
             if ($(this).attr('id') == 'gift') {
                 $("div#budgetColumn").hide();
                 $("select#price").val('');
+                $("input#price").val('');
                 $("input#giftInput").val(1);
             } else {
                 $("input#giftInput").val('');

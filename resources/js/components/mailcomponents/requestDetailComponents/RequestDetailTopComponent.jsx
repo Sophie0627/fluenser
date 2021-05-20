@@ -11,11 +11,11 @@ const RequestDetailTopComponent = (props) => {
                 </a>
             </div>
             <div className="float-left flex-shrink-0 rounded-full" style={{
-                width: '50px',
-                height: '50px',
+                width: '55px',
+                height: '55px',
                 margin: '10px 0',
                 padding: '2px',
-                marginLeft: '28px',
+                marginLeft: '14px',
                 background: 'linear-gradient(to right, #06ebbe, #1277d3)'
             }}>
                 <div className="w-full bg-white rounded-full" style={{padding: '2px'}}>

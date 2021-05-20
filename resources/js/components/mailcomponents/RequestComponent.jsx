@@ -67,7 +67,7 @@ const RequestComponent =(props) => {
       headers: headers
     }).then((response) => {
       if(!isMount) {
-        setIsWaiting(false);
+       setIsWaiting(false);
         if(response.status == 200) {
           console.log('-------------');
           console.log(response.data);
@@ -80,7 +80,7 @@ const RequestComponent =(props) => {
       }
     }).catch(error => {
       console.log(error);
-    })
+    });
     console.log("mounted component message");
 
     // Pusher
@@ -117,7 +117,7 @@ const RequestComponent =(props) => {
   if(isWaiting) {
     return (
       <div className="max-w-sm mx-auto py-10 text-center">
-        <img src={constant.baseURL + 'img/waiting.gif'} alt="waiting" className="mx-auto"/>
+        <img src={constant.baseURL + 'img/waiting.gif'} alt="waiting" className="mx-auto w-1/2"/>
       </div>
     )
   } else {
@@ -149,18 +149,18 @@ const RequestComponent =(props) => {
                   <div key={i} className="w-11/12 mx-auto" id={ request.id }>
                     <div className='pt-7'>
                         <div className="float-left flex-shrink-0 rounded-full" style={{
-                            width: '55px',
-                            height: '55px',
+                            width: '60px',
+                            height: '60px',
                             margin: '5px 0',
                             padding: '2px',
-                            marginLeft: '28px',
+                            marginLeft: '5px',
                             background: 'linear-gradient(to right, #06ebbe, #1277d3)'
                         }}>
                             <div className="w-full bg-white rounded-full" style={{padding: '2px'}}>
                             <img src={ constant.baseURL + 'storage/profile-image/' + request.accountInfo[0].avatar + '.jpg' } alt={ request.accountInfo[0].avatar } className="rounded-full" style={{width:'100%'}}/>
                             </div>
                         </div>
-                      <div style={{marginLeft:'100px'}}>
+                      <div style={{marginLeft:'75px'}}>
                         <p className="text-md md:text-lg font-bold relative">
                           { request.accountInfo[0].name }
                           {
@@ -172,12 +172,12 @@ const RequestComponent =(props) => {
                           }
                         </p>
                       </div>
-                      <div style={{margin:'0 0 0 100px'}}>
+                      <div style={{margin:'0 0 0 75px'}}>
                         <p className="text-xs md:text-sm text-gray-500 overflow-hidden" style={{height:'17px'}}>
                           { request.requestContent.content }
                         </p>
                       </div>
-                      <div style={{marginLeft:'100px'}}>
+                      <div style={{marginLeft:'75px'}}>
                         {
                           (request.requestContent.gift == 1)
                           ?

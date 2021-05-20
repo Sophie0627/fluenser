@@ -13,7 +13,7 @@
   <div class="w-full md:max-w-7xl mx-auto overflow-auto pb-3" id="tabContainer">
     <div class="tabContent w-11/12 mx-auto" id="accepted" >
       @foreach ($acceptedTasks as $task)
-          <a href={{ route('taskDetail', ['request_id' => $task->request_id ]) }} class="block relative w-full mt-3 rounded px-3 py-3" style="box-shadow: 0 0 8px 0 #999">
+          <a href="{{ route('taskDetail', ['request_id' => $task->request_id ]) }}" class="block relative w-full mt-3 rounded px-3 py-3" style="box-shadow: 0 0 8px 0 #999">
             <p class="text-md md:text-lg font-bold">{{ $task->title }}</p>
             <p class="text-xs md:text-sm text-gray-500">
               <span>{{ $task->name }}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -37,7 +37,7 @@
     </div>
     <div class="tabContent w-11/12 mx-auto" id="completed">
       @foreach ($completedTasks as $task)
-          <a href={{ route('taskDetail', ['request_id' => $task->request_id ]) }} class="block w-full mt-3 rounded px-3 py-3 relative" style="box-shadow: 0 0 8px 0 #999">
+          <a href="{{ route('taskDetail', ['request_id' => $task->request_id ]) }}" class="block w-full mt-3 rounded px-3 py-3 relative" style="box-shadow: 0 0 8px 0 #999">
             <p class="text-md md:text-lg font-bold">{{ $task->title }}</p>
             <p class="text-xs md:text-sm text-gray-500">
               <span>{{ $task->name }}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -56,7 +56,7 @@
     </div>
     <div class="tabContent w-11/12 mx-auto" id="disputed">
       @foreach ($disputedTasks as $task)
-          <a href={{ route('disputeChat', ['request_id' => $task->request_id ]) }} class="block w-full mt-3 rounded px-3 py-3 relative" style="box-shadow: 0 0 8px 0 #999">
+          <a href="{{ route('disputeChat', ['request_id' => $task->request_id ]) }}" class="block w-full mt-3 rounded px-3 py-3 relative" style="box-shadow: 0 0 8px 0 #999">
             <p class="text-md md:text-lg font-bold">{{ $task->title }}</p>
             <p class="text-xs md:text-sm text-gray-500">
               <span>{{ $task->name }}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
