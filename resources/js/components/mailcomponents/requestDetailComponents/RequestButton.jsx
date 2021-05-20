@@ -37,8 +37,8 @@ const RequestButton = (props) => {
           console.log(res.data);
         if(res.status == 200) {
             if(res.data.data == 'success') {
-                // history.push('/collaboration/accepted');
-                // window.location.reload();
+                history.push('/collaboration/accepted');
+                window.location.reload();
             }
             if(res.data.data == 'not enough balance') {
                 $("div#messageModal").fadeIn(200);

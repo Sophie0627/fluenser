@@ -14,18 +14,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-<!--<script src="{{ asset('public/js/app.js') }}" defer></script>-->
+    <script src="{{ asset('public/js/app.js') }}" defer></script>
     <!-- pusher scripts-->
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 
     <!-- bootstarp -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- pusher.js -->
-    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 
     <!-- croper js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css"
@@ -43,182 +40,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/css/all.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/css/all.css') }}"> -->
     <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none !important;
-        }
-
-        .col-md-8 {
-            padding: 0 !important;
-        }
-
-        a:hover {
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        input[type='checkbox']:focus {
-            border: none;
-        }
-
-        .invalid-feedback {
-            color: red;
-        }
-
-        a.selected {
-            background: white;
-            border-radius: 0.25rem;
-            color: #999;
-        }
-
-        a.unselected {
-            color: #999;
-        }
-
-        .clearfix {
-            display: table;
-            content: '';
-            clear: both;
-        }
-
-        .menu_selected {
-            color: black;
-            border-bottom: solid 4px rgb(83, 181, 193);
-        }
-
-        #mail-component #messageTab a.active,
-        #searchTab a.active,
-        #collTab a.active {
-            border-bottom: solid 2px #4db3c1;
-        }
-
-        #searchTab a.active {
-            color: #4db3c1;
-        }
-
-        a:focus {
-            color: black !important;
-        }
-
-        #lg_tabMenu a.active {
-            color: black;
-        }
-
-        #buttons button:hover {
-            color: lightgrey;
-        }
-
-        #buttons button:disabled:hover {
-            color: white;
-        }
-
-        .hasImage:hover section {
-            background-color: rgba(5, 5, 5, 0.4);
-        }
-
-        .hasImage:hover button:hover {
-            background: rgba(5, 5, 5, 0.45);
-        }
-
-        /* #overlay p, i {
-        opacity: 0;
-        } */
-
-        #overlay.draggedover {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-
-        #overlay.draggedover p,
-        #overlay.draggedover i {
-            opacity: 1;
-        }
-
-        .group:hover .group-hover\:text-blue-800 {
-            color: #2b6cb0;
-        }
-
-        img#image {
-            display: block;
-            max-width: 100%;
-        }
-
-        .preview {
-            overflow: hidden;
-            width: 160px;
-            height: 160px;
-            margin: 10px;
-            border: 1px solid red;
-        }
-
-        .modal-lg {
-            max-width: 1000px !important;
-        }
-
-        #searchCategory label {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #bbf3f1;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #2bc5b5;
-            border-radius: 4px;
-        }
-
-        a.payMethod.active div.payMethod {
-            background: #52abb1 !important;
-            border: none;
-        }
-
-        a.payMethod.active div.payMethod p {
-            color: white;
-        }
-
-        #star-rating a:hover {
-            color: rgba(251, 191, 36);
-        }
-
-        .carousel-indicators {
-            bottom: -40px;
-        }
-
-        .carousel-indicators li {
-            width: 4px !important;
-            height: 4px !important;
-            opacity: 1 !important;
-            border-radius: 50%;
-            border: none;
-            margin-bottom: 10px;
-            background-color: #0ac0c6;
-        }
-
-        .carousel-indicators li.active {
-            box-shadow: 0 0 0px 2px #0ac0c677;
-        }
-
-        input:focus {
-            border: #333 !important;
-        }
-
-        th:first-child {
-            border-top-left-radius: 10px;
-        }
-
-        th:last-child {
-            border-top-right-radius: 10px;
-        }
+        *{font-family:Poppins,sans-serif}input:focus,select:focus,textarea:focus{outline:0!important}.col-md-8{padding:0!important}a:hover{text-decoration:none;cursor:pointer}input[type=checkbox]:focus{border:none}.invalid-feedback{color:red}a.selected{background:#fff;border-radius:.25rem;color:#999}a.unselected{color:#999}.clearfix{display:table;content:'';clear:both}.menu_selected{color:#000;border-bottom:solid 4px #53b5c1}#collTab a.active,#mail-component #messageTab a.active,#searchTab a.active{border-bottom:solid 2px #4db3c1}#searchTab a.active{color:#4db3c1}a:focus{color:#000!important}#lg_tabMenu a.active{color:#000}#buttons button:hover{color:#d3d3d3}#buttons button:disabled:hover{color:#fff}.hasImage:hover section{background-color:rgba(5,5,5,.4)}.hasImage:hover button:hover{background:rgba(5,5,5,.45)}#overlay.draggedover{background-color:rgba(255,255,255,.7)}#overlay.draggedover i,#overlay.draggedover p{opacity:1}.group:hover .group-hover\:text-blue-800{color:#2b6cb0}img#image{display:block;max-width:100%}.preview{overflow:hidden;width:160px;height:160px;margin:10px;border:1px solid red}.modal-lg{max-width:1000px!important}#searchCategory label{font-family:Poppins,sans-serif}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#bbf3f1;border-radius:4px}::-webkit-scrollbar-thumb{background:#2bc5b5;border-radius:4px}a.payMethod.active div.payMethod{background:#52abb1!important;border:none}a.payMethod.active div.payMethod p{color:#fff}#star-rating a:hover{color:rgba(251,191,36)}.carousel-indicators{bottom:-40px}.carousel-indicators li{width:4px!important;height:4px!important;opacity:1!important;border-radius:50%;border:none;margin-bottom:10px;background-color:#0ac0c6}.carousel-indicators li.active{box-shadow:0 0 0 2px #0ac0c677}input:focus{border:#333!important}th:first-child{border-top-left-radius:10px}th:last-child{border-top-right-radius:10px}
     </style>
 </head>
 <body onunload="arrive()">

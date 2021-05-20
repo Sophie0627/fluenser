@@ -97,7 +97,7 @@ class InboxComponent extends Component {
         const channel = pusher.subscribe('fluenser-channel');
         channel.bind('fluenser-event', function (data) {
             if (data.trigger === 'newInbox') {
-                if (data.request.receive_id === this.state.accountInfo.id) {
+                if (data.request.receive_id === this1.state.accountInfo.id) {
                     const inbox = this1.state.inboxes;
                     inbox.push(data.data);
                     this1.setState({
@@ -207,16 +207,21 @@ class InboxComponent extends Component {
                                         let time = 0;
                                         if(difference < (1000 * 60 * 60)) {
                                             console.log('minutes');
-                                            time = Math.floor(difference / 1000 / 60) + ' minutes';
+                                            time = Math.floor(difference / 1000 / 60);
+											time = (time <= 1) ? (time + 'minute') : (time + 'minutes');
+
                                         } else if(1000 * 60 * 60 * 24 > difference && difference > 1000 * 60 * 60) {
                                             console.log('hours');
-                                            time = Math.floor(difference / 1000 / 60 / 60) + ' hours';
+                                            time = Math.floor(difference / 1000 / 60 / 60);
+											time = (time <= 1) ? (time + 'hour') : (time + 'hours');
                                         } else if(1000 * 60 * 60 * 24 * 7 > difference && difference > 1000 * 60 * 60 * 24){
                                             console.log('hours');
-                                            time = Math.floor(difference / 1000 / 60 / 60 / 24) + ' days';
+                                            time = Math.floor(difference / 1000 / 60 / 60 / 24);
+											time = (time <= 1) ? (time + 'day') : (time + 'days');
                                         } else if(1000 * 60 * 60 * 24 *7 < difference) {
                                             console.log('hours');
-                                            time = Math.floor(difference / 1000 / 60 /60 /24 /7) + ' weeks';
+                                            time = Math.floor(difference / 1000 / 60 /60 /24 /7);
+											time = (time <= 1) ? (time + 'week') : (time + 'weeks');
                                         }
                                         console.log(time + "time");
                                         return (
